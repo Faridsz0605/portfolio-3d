@@ -30,8 +30,9 @@ const words = [
 
 const counterItems = [
   { value: 1, suffix: "+", label: "Years of Experience" },
-  { value: 20, suffix: "+", label: "Completed Courses" },
-  { value: 108, suffix: "+", label: "Completed Projects" },
+  { value: 4, suffix: "+", label: "Projects Completed" },
+  { value: 20, suffix: "+", label: "Certifications" },
+  { value: 4, suffix: "+", label: "Ongoing Side Projects" },
 ];
 
 const logoIconsList = [
@@ -74,43 +75,50 @@ const abilities = [
   {
     imgPath: "/images/seo.png",
     title: "Quality Focus",
-    desc: "Delivering high-impact results through a relentless drive for mastery and an uncompromising eye for detail",
+    desc: "Delivering high-impact results through a relentless drive for mastery and an uncompromising eye for detail.",
   },
   {
     imgPath: "/images/chat.png",
-    title: "Assertive comunication",
+    title: "Assertive Communication",
     desc: "Keeping you updated at every step to ensure transparency and clarity.",
   },
   {
     imgPath: "/images/time.png",
     title: "Power Documentation",
-    desc: "'knowledge is a treasure and it should NOT be blackboxed' let's learns about each others.",
+    desc: "'Knowledge is a treasure and it should not be locked away.' Let's learn from each other.",
   },
 ];
 
+// TODO: Replace 2D logo images in /public/images/logos/ with the correct tech stack icons.
+// Affected entries: AWS & Cloud, Docker & Kubernetes, AI Agents Orchestration, Business Intelligence.
+// Python already has a matching file: /images/logos/python.svg
 const techStackImgs = [
   {
-    name: "Linux-enthusiast",
-    imgPath: "/images/logos/react.png",
+    name: "AWS & Cloud",
+    imgPath: "/images/logos/react.png", // TODO: replace with AWS logo
   },
   {
     name: "Python Developer",
     imgPath: "/images/logos/python.svg",
   },
   {
-    name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
+    name: "Docker & Kubernetes",
+    imgPath: "/images/logos/node.png", // TODO: replace with Docker logo
   },
   {
-    name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
+    name: "AI Agents Orchestration",
+    imgPath: "/images/logos/three.png", // TODO: replace with AI agents logo
   },
   {
-    name: "always learning",
-    imgPath: "/images/logos/git.svg",
+    name: "Business Intelligence",
+    imgPath: "/images/logos/git.svg", // TODO: replace with BI tools logo
   },
 ];
 
+// TODO: Replace 3D model files (.glb) in /public/models/ with the correct tech stack icons.
+// Current models (React, Python, Node, Three.js, Git) are placeholders.
+// Needed: AWS, Docker & Kubernetes, AI Agents Orchestration, Business Intelligence tools.
+// See README.md for full TODO list.
 const techStackIcons = [
   {
     name: "Linux-Enthusiast",
@@ -146,42 +154,42 @@ const techStackIcons = [
 
 const expCards = [
   {
-    review:
-      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
+    // TODO: replace with real employer review
+    review: "— TODO: add employer testimonial —",
+    imgPath: "/images/exp1.png", // TODO: replace with Intcomex-related image
+    logoPath: "/images/logo1.png", // TODO: replace with Intcomex logo
     title: "Data Analyst",
-    date: "July 2025 - January 2026",
+    date: "June 2025 – January 2026",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Built and automated dashboards from OLAP cube queries to support business decision-making for Human Capital, Finance, and Accounting teams.",
+      "Delivered data modeling and analysis with operational impact across 14+ countries.",
+      "Automated ETL pipelines with Python, managed version control with Git and GitHub, and delivered insights via Power BI with Jupyter Notebook documentation.",
     ],
   },
   {
-    review:
-      "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    // TODO: replace with real employer review
+    review: "— TODO: add employer testimonial —",
+    imgPath: "/images/exp2.png", // TODO: replace with Universidad Santo Tomas-related image
+    logoPath: "/images/logo2.png", // TODO: replace with Universidad Santo Tomas logo
+    title: "Associate Investigator",
+    date: "June 2024 – January 2025",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Implemented Big Data processing scripts for a foreign trade research project, using tools such as Dask.",
+      "Applied ethical standards in the use of AI tools integrated into the research workflow.",
+      "Automated data pipelines with Python to handle large volumes of external trade data.",
     ],
   },
   {
-    review:
-      "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+    // TODO: replace with real employer review
+    review: "— TODO: add employer testimonial —",
+    imgPath: "/images/exp3.png", // TODO: replace with Semillero-related image
+    logoPath: "/images/logo3.png", // TODO: replace with Semillero logo
+    title: "Lead Investigator",
+    date: "June 2022 – January 2026",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "Led the design and implementation of econometric models for academic publications, developing sampling and parameterization tools using R and Python.",
+      "Visualized research insights using Business Intelligence tools.",
+      "Designed and implemented various statistical sampling instruments.",
     ],
   },
 ];
@@ -201,12 +209,13 @@ const expLogos = [
   },
 ];
 
+// TODO: Replace placeholder testimonials with real quotes from peers and collaborators.
 const testimonials = [
   {
     name: "Esther Howard",
     mentions: "@estherhoward",
     review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+      "I can't say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
     imgPath: "/images/client1.png",
   },
   {
@@ -227,14 +236,14 @@ const testimonials = [
     name: "Marvin McKinney",
     mentions: "@marvinmckinney",
     review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
+      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that's both modern and easy to navigate. Fantastic work overall.",
     imgPath: "/images/client5.png",
   },
   {
     name: "Floyd Miles",
     mentions: "@floydmiles",
     review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
+      "Adrian's expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He's a true professional!",
     imgPath: "/images/client4.png",
   },
   {
@@ -246,22 +255,23 @@ const testimonials = [
   },
 ];
 
+// TODO: Update Footer component (src/sections/Footer.jsx) to wrap social icons in <a> tags
+// using the `link` field below so the icons become clickable.
 const socialImgs = [
   {
     name: "insta",
     imgPath: "/images/insta.png",
-  },
-  {
-    name: "fb",
-    imgPath: "/images/fb.png",
+    link: "https://www.instagram.com/farid_sayago7/",
   },
   {
     name: "x",
     imgPath: "/images/x.png",
+    link: "https://x.com/farids0805",
   },
   {
     name: "linkedin",
     imgPath: "/images/linkedin.png",
+    link: "https://www.linkedin.com/in/faridsayago/",
   },
 ];
 
