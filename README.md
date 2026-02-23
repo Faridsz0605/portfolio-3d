@@ -1,108 +1,57 @@
-<div align="center">
-  <br />
-    <a href="https://www.youtube.com/watch?v=E-fdPfRxkzQ" target="_blank">
-      <img src="public/images/readme.png" alt="Project Banner">
-    </a>
-  <br />
+# Farid Sayago — Personal Portfolio
 
-  <div>
-    <img src="https://img.shields.io/badge/-Three.js-black?style=for-the-badge&logo=three.js&logoColor=white" />
-    <img src="https://img.shields.io/badge/-GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white" />
-    <img src="https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-  </div>
+Interactive 3D personal portfolio. Self-hosted on old hardware using Cloudflare Tunnels and a Linux server.
 
-  <h3 align="center">Interactive 3D Portfolio Website</h3>
+Built on top of a Three.js + React + GSAP template and customized with personal content, real work experience, and original projects.
 
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
-    </div>
-</div>
+---
 
-## 📋 <a name="table">Table of Contents</a>
+## Tech Stack
 
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🔗 [Assets & Snippets](#links)
-6. 🚀 [More](#more)
-
-## ⚠️ Tutorial
-
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
-
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
-
-<a href="https://www.youtube.com/watch?v=E-fdPfRxkzQ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
-
-## <a name="introduction">🤖 Introduction</a>
-
-The 3D Portfolio project is a highly engaging personal website that features animated 3D scenes, smooth camera transitions, interactive model showcases, and responsive design. It’s ideal for developers, designers, or freelancers looking to stand out in the digital crowd.
-
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
-
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
-
-## <a name="tech-stack">⚙️ Tech Stack</a>
-
-- Three.js
-- React Three Fiber
-- Drei
-- GSAP
+### Portfolio (this project)
+- React 19
+- Three.js / React Three Fiber / Drei
+- GSAP (scroll animations)
 - Tailwind CSS
 - Vite
-- React 19
 
-## <a name="features">🔋 Features</a>
+### Personal Skills
+- AWS & Cloud
+- Python
+- Docker & Kubernetes
+- AI Agents Orchestration & Creation
+- Business Intelligence (Power BI, OLAP)
+- Git & GitHub
+- BASH scripting
+- Markdown documentation
+- Claude Code
+- C
+- Rust (learning)
+- English (C1)
 
-### Features of the 3D Portfolio Project
+---
 
-👉 Animated 3D models and reveal animations
+## Projects
 
-👉 Realistic lighting and shadows
+| Project | Description | Stack |
+|---------|-------------|-------|
+| My Own Portfolio | Old hardware self-hosted web page | React, Three.js, Tailwind CSS, Docker, Cloudflare Tunnels, Linux |
+| Self-hosted Home-lab | 3 node Kubernetes cluster lab | Docker & Kubernetes, Talos Linux, Python |
+| High-level Compliance Dashboard | Automated BI dashboard for HR and financial decision-making across 14+ countries | Python, Jupyter Notebooks, AI Orchestration, Markdown |
 
-👉 GSAP-powered scroll interactions
+---
 
-👉 Responsive design with Tailwind CSS and Flexbox/Grid
+## Quick Start
 
-👉 Micro Interactions
-
-👉 Multi-section layout (About, Projects, Contact)
-
-👉 Mobile optimized 3D experience
-
-and many more, including code architecture and reusability.
-
-## <a name="quick-start">🤸 Quick Start</a>
-
-Follow these steps to set up the project locally on your machine.
-
-**Prerequisites**
-
-Make sure you have the following installed on your machine:
-
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
-
-**Cloning the Repository**
+**Prerequisites:** Git, Node.js, pnpm
 
 ```bash
-git clone https://github.com/adrianhajdin/3d-portfolio.git
+git clone <repo-url>
 cd 3d-portfolio
+pnpm install
 ```
 
-**Installation**
-
-Install the project dependencies using npm:
-
-```bash
-npm install
-```
-
-**Set Up Environment Variables**
-
-Create a new file named `.env` in the root of your project and add the following content:
+**Environment variables** — create a `.env` file:
 
 ```env
 VITE_APP_EMAILJS_SERVICE_ID=
@@ -110,33 +59,50 @@ VITE_APP_EMAILJS_TEMPLATE_ID=
 VITE_APP_EMAILJS_PUBLIC_KEY=
 ```
 
-Replace the placeholder values with your actual **[EmailJS](https://www.emailjs.com/)** credentials.
-
-**Running the Project**
+**Run:**
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173/) in your browser to view the project.
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
+---
 
-## <a name="links">🔗 Assets and Snippets</a>
+## TODO
 
-Assets and snippets used in the project can be found in the **[video kit](https://jsm.dev/pfolio25-kit)**.
+### 3D Model Icons (`/public/models/`)
+Current `.glb` files are placeholders from the original template (React, Node.js, Three.js, Git). They need to be replaced with proper tech stack models:
 
-<a href="https://jsm.dev/pfolio25-kit" target="_blank">
-  <img src="public/images/readme-video-kit.png" alt="Video Kit Banner">
-</a>
+- [ ] AWS & Cloud → source or create `aws-transformed.glb`
+- [ ] Docker & Kubernetes → source or create `docker-transformed.glb`
+- [ ] AI Agents Orchestration → source or create `ai-agents-transformed.glb`
+- [ ] Business Intelligence → source or create `bi-tools-transformed.glb`
+- [ ] Python → already exists: `python-transformed.glb` (keep)
 
+Models must be in `.glb` format, optimized with `gltf-transform`. Reference: `techStackIcons` in `src/constants/index.js`.
 
-## <a name="more">🚀 More</a>
+### 2D Logo Images (`/public/images/logos/`)
+- [ ] Replace `react.png` entry with AWS logo for the `techStackImgs` array
+- [ ] Replace `node.png` entry with Docker logo
+- [ ] Replace `three.png` entry with an AI agents icon
+- [ ] Replace `git.svg` entry with a BI tools icon
 
-**Advance your skills with JSM Pro Courses**
+### Project Screenshots (`/public/images/`)
+- [ ] Replace `project1.png` with screenshot of the personal portfolio
+- [ ] Replace `project2.png` with screenshot of the Home-lab setup
+- [ ] Replace `project3.png` with screenshot of the Compliance Dashboard
 
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with
-detailed explanations, cool features, and exercises to boost your skills. Give it a go!
+### Experience Cards (`src/constants/index.js` — `expCards`)
+- [ ] Replace `imgPath` placeholders (exp1.png, exp2.png, exp3.png) with real images
+- [ ] Replace `logoPath` placeholders (logo1.png, logo2.png, logo3.png) with company logos
+- [ ] Add real employer review quotes to the `review` field
 
-<a href="https://beta.jsmastery.pro/" target="_blank">
-  <img src="public/images/readme-bottom.png" alt="Project Banner">
-</a>
+### Testimonials (`src/constants/index.js` — `testimonials`)
+- [ ] Replace all 6 placeholder testimonials with real quotes from peers and collaborators
+
+### Social Links (`src/sections/Footer.jsx`)
+- [ ] Wrap social icons in `<a>` tags using the `link` field already present in `socialImgs` (see `src/constants/index.js`)
+
+### EmailJS
+- [ ] Configure EmailJS credentials in `.env` to enable the contact form
