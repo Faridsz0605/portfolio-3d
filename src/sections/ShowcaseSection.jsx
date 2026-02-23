@@ -49,16 +49,15 @@ const AppShowcase = () => {
         <div className="showcaselayout">
           <div ref={rydeRef} className="first-project-wrapper">
             <div className="image-wrapper">
-              <img src="/images/project1.png" alt="Ryde App Interface" />
+              {/* TODO: replace with actual project screenshot */}
+              <img src="/images/project1.png" alt="Personal Portfolio" />
             </div>
             <div className="text-content">
               <h2>
-                On-Demand Rides Made Simple with a Powerful, User-Friendly App
-                called Ryde
+                My Own Portfolio — Old hardware self-hosted web page
               </h2>
               <p className="text-white-50 md:text-xl">
-                An app built with React Native, Expo, & TailwindCSS for a fast,
-                user-friendly experience.
+                Self-hosted on old hardware using Docker, Cloudflare Tunnels, and a Linux server. Built with React, Three.js, Tailwind CSS, and Git.
               </p>
             </div>
           </div>
@@ -66,19 +65,21 @@ const AppShowcase = () => {
           <div className="project-list-wrapper overflow-hidden">
             <div className="project" ref={libraryRef}>
               <div className="image-wrapper bg-[#FFEFDB]">
+                {/* TODO: replace with actual project screenshot */}
                 <img
                   src="/images/project2.png"
-                  alt="Library Management Platform"
+                  alt="Self-hosted Home-lab"
                 />
               </div>
-              <h2>The Library Management Platform</h2>
+              <h2>Self-hosted Home-lab — 3 node Kubernetes cluster lab</h2>
             </div>
 
             <div className="project" ref={ycDirectoryRef}>
               <div className="image-wrapper bg-[#FFE7EB]">
-                <img src="/images/project3.png" alt="YC Directory App" />
+                {/* TODO: replace with actual project screenshot */}
+                <img src="/images/project3.png" alt="Compliance Dashboard for HR Analysis" />
               </div>
-              <h2>YC Directory - A Startup Showcase App</h2>
+              <h2>High-level Compliance Dashboard — Automated BI dashboard for HR and financial decision-making across 14+ countries</h2>
             </div>
           </div>
         </div>
