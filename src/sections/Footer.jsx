@@ -8,6 +8,7 @@ const Footer = () => {
           <p>Terms & Conditions</p>
         </div>
         <div className="socials">
+          {/* TODO: wrap each icon in an <a> tag using socialImg.link from src/constants/index.js */}
           {socialImgs.map((socialImg, index) => (
             <div key={index} className="icon">
               <img src={socialImg.imgPath} alt="social icon" />
