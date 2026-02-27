@@ -50,7 +50,7 @@ const AppShowcase = () => {
           <div ref={rydeRef} className="first-project-wrapper">
             <div className="image-wrapper">
               {/* TODO: replace with actual project screenshot */}
-              <img src="/images/project1.png" alt="Personal Portfolio" />
+              <img src={`${import.meta.env.BASE_URL}images/project1.png`} alt="Personal Portfolio" />
             </div>
             <div className="text-content">
               <h2>
@@ -67,7 +67,7 @@ const AppShowcase = () => {
               <div className="image-wrapper bg-[#FFEFDB]">
                 {/* TODO: replace with actual project screenshot */}
                 <img
-                  src="/images/project2.png"
+                  src={`${import.meta.env.BASE_URL}images/project2.png`}
                   alt="Self-hosted Home-lab"
                 />
               </div>
@@ -77,7 +77,7 @@ const AppShowcase = () => {
             <div className="project" ref={ycDirectoryRef}>
               <div className="image-wrapper bg-[#FFE7EB]">
                 {/* TODO: replace with actual project screenshot */}
-                <img src="/images/project3.png" alt="Compliance Dashboard for HR Analysis" />
+                <img src={`${import.meta.env.BASE_URL}images/project3.png`} alt="Compliance Dashboard for HR Analysis" />
               </div>
               <h2>High-level Compliance Dashboard — Automated BI dashboard for HR and financial decision-making across 14+ countries</h2>
             </div>
