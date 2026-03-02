@@ -117,14 +117,10 @@ const techStackImgs = [
   },
 ];
 
-// TODO: Replace 3D model files (.glb) in /public/models/ with the correct tech stack icons.
-// Current models (React, Python, Node, Three.js, Git) are placeholders.
-// Needed: AWS, Docker & Kubernetes, AI Agents Orchestration, Business Intelligence tools.
-// See README.md for full TODO list.
 const techStackIcons = [
   {
     name: "Linux-Enthusiast",
-    modelPath: `${BASE}models/react_logo-transformed.glb`,
+    modelPath: `${BASE}models/arch-logo.glb`,
     scale: 1,
     rotation: [0, 0, 0],
   },
@@ -142,7 +138,7 @@ const techStackIcons = [
   },
   {
     name: "Dockerization & Orchestation",
-    modelPath: `${BASE}models/three.js-transformed.glb`,
+    modelPath: `${BASE}models/docker-logo.glb`,
     scale: 0.05,
     rotation: [0, 0, 0],
   },
