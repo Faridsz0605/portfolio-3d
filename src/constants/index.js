@@ -105,7 +105,7 @@ const techStackImgs = [
   },
   {
     name: "Docker & Kubernetes",
-    imgPath: `${BASE}images/logos/node.png`, // TODO: replace with Docker logo
+    imgPath: `${BASE}images/logos/docker-logo.glb`, // TODO: replace with Docker logo
   },
   {
     name: "AI Agents Orchestration",
