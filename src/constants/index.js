@@ -121,7 +121,7 @@ const techStackIcons = [
   {
     name: "Linux-Enthusiast",
     modelPath: `${BASE}models/arch-logo.glb`,
-    scale: 1,
+    scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
@@ -133,7 +133,7 @@ const techStackIcons = [
   {
     name: "AWS & Cloud",
     modelPath: `${BASE}models/node-transformed.glb`,
-    scale: 5,
+    scale: 0.8,
     rotation: [0, -Math.PI / 2, 0],
   },
   {
