@@ -1,26 +1,37 @@
-import Testimonials from "./sections/Testimonials";
-import Footer from "./sections/Footer";
-import Contact from "./sections/Contact";
-import TechStack from "./sections/TechStack";
-import Experience from "./sections/Experience";
+import { lazy, Suspense } from "react";
 import Hero from "./sections/Hero";
-import ShowcaseSection from "./sections/ShowcaseSection";
-import LogoShowcase from "./sections/LogoShowcase";
-import FeatureCards from "./sections/FeatureCards";
+import TechStack from "./sections/TechStack";
+import Contact from "./sections/Contact";
 import Navbar from "./components/NavBar";
+
+// Lazy load sections that have no WebGL Canvas — safe to defer
+const ShowcaseSection = lazy(() => import("./sections/ShowcaseSection"));
+const LogoShowcase = lazy(() => import("./sections/LogoShowcase"));
+const FeatureCards = lazy(() => import("./sections/FeatureCards"));
+const Experience = lazy(() => import("./sections/Experience"));
+const Testimonials = lazy(() => import("./sections/Testimonials"));
+const Footer = lazy(() => import("./sections/Footer"));
+
+// Hero, TechStack and Contact stay eager — they each own WebGL Canvas elements.
+// Lazy-mounting multiple Canvas components simultaneously saturates the browser's
+// WebGL context pool and causes THREE.WebGLRenderer: Context Lost.
 
 const App = () => (
   <>
     <Navbar />
     <Hero />
-    <ShowcaseSection />
-    <LogoShowcase />
-    <FeatureCards />
-    <Experience />
+    <Suspense fallback={null}>
+      <ShowcaseSection />
+      <LogoShowcase />
+      <FeatureCards />
+      <Experience />
+    </Suspense>
     <TechStack />
-    <Testimonials />
-    <Contact />
-    <Footer />
+    <Suspense fallback={null}>
+      <Testimonials />
+      <Contact />
+      <Footer />
+    </Suspense>
   </>
 );
 
