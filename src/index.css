@@ -170,6 +170,11 @@ section {
         img {
           @apply w-full h-full object-cover rounded-xl absolute inset-0;
         }
+
+        img.project-screenshot {
+          border-radius: 1rem;
+          background: transparent;
+        }
       }
 
       .text-content {
@@ -194,6 +199,11 @@ section {
 
       img {
         @apply w-full h-full object-contain rounded-xl;
+      }
+
+      img.project-screenshot {
+        border-radius: 1rem;
+        background: transparent;
       }
 
       h2 {

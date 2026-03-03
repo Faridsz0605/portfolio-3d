@@ -12,14 +12,12 @@ const AppShowcase = () => {
   const ycDirectoryRef = useRef(null);
 
   useGSAP(() => {
-    // Animation for the main section
     gsap.fromTo(
       sectionRef.current,
       { opacity: 0 },
       { opacity: 1, duration: 1.5 },
     );
 
-    // Animations for each app showcase
     const cards = [rydeRef.current, libraryRef.current, ycDirectoryRef.current];
 
     cards.forEach((card, index) => {
@@ -49,14 +47,14 @@ const AppShowcase = () => {
         <div className="showcaselayout">
           <div ref={rydeRef} className="first-project-wrapper">
             <div className="image-wrapper">
-              {/* TODO: replace with actual project screenshot */}
               <img
                 src={`${import.meta.env.BASE_URL}images/project1.png`}
-                alt="Personal Portfolio"
+                alt="wiener-git project screenshot"
+                className="project-screenshot"
               />
             </div>
             <div className="text-content">
-              <h2>My Own Portfolio — Old hardware self-hosted web page</h2>
+              <h2>wiener-git</h2>
               <p className="text-white-50 md:text-xl">
                 Self-hosted on old hardware using Docker, Cloudflare Tunnels,
                 and a Linux server. Built with React, Three.js, Tailwind CSS,
@@ -68,27 +66,30 @@ const AppShowcase = () => {
           <div className="project-list-wrapper overflow-hidden">
             <div className="project" ref={libraryRef}>
               <div className="image-wrapper bg-[#00000000]">
-                {/* TODO: replace with actual project screenshot */}
                 <img
                   src={`${import.meta.env.BASE_URL}images/project2.png`}
-                  alt="Self-hosted Home-lab"
+                  alt="WHTTP HTTP Server in C project screenshot"
+                  className="project-screenshot"
                 />
               </div>
-              <h2>Self-hosted Home-lab — 3 node Kubernetes cluster lab</h2>
+              <h2>WHTTP — HTTP Server in C [IN PROGRESS]</h2>
+              <p className="text-white-50">
+                An HTTP server written in C to improve hands-on knowledge on code security and the abstractions needed to handle API communication. Under the umbrella of Wiener Studios.
+              </p>
             </div>
 
             <div className="project" ref={ycDirectoryRef}>
               <div className="image-wrapper bg-[#00000000]">
-                {/* TODO: replace with actual project screenshot */}
                 <img
                   src={`${import.meta.env.BASE_URL}images/project3.png`}
-                  alt="Compliance Dashboard for HR Analysis"
+                  alt="Wiener Tickets ML Ticket Prediction project screenshot"
+                  className="project-screenshot"
                 />
               </div>
-              <h2>
-                High-level Compliance Dashboard — Automated BI dashboard for HR
-                and financial decision-making across 14+ countries
-              </h2>
+              <h2>Wiener Tickets — ML Ticket Prediction [IN PROGRESS]</h2>
+              <p className="text-white-50">
+                ML model for ticket prediction with an end-to-end MLOps workflow.
+              </p>
             </div>
           </div>
         </div>

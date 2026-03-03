@@ -6,4 +6,19 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   base: "/portfolio-3d/",
   plugins: [react(), tailwindcss()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "three-vendor": [
+            "three",
+            "@react-three/fiber",
+            "@react-three/drei",
+            "@react-three/postprocessing",
+          ],
+          "gsap-vendor": ["gsap", "@gsap/react"],
+        },
+      },
+    },
+  },
 });
