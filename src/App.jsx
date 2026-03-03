@@ -9,7 +9,7 @@ const ShowcaseSection = lazy(() => import("./sections/ShowcaseSection"));
 const LogoShowcase = lazy(() => import("./sections/LogoShowcase"));
 const FeatureCards = lazy(() => import("./sections/FeatureCards"));
 const Experience = lazy(() => import("./sections/Experience"));
-const Testimonials = lazy(() => import("./sections/Testimonials"));
+// const Testimonials = lazy(() => import("./sections/Testimonials"));
 const Footer = lazy(() => import("./sections/Footer"));
 
 // Hero, TechStack and Contact stay eager — they each own WebGL Canvas elements.
@@ -28,7 +28,7 @@ const App = () => (
     </Suspense>
     <TechStack />
     <Suspense fallback={null}>
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Contact />
       <Footer />
     </Suspense>
