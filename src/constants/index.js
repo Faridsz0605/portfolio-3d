@@ -120,10 +120,10 @@ const techStackIcons = [
     modelPath: `${BASE}models/arch-logo.glb`,
     scale: 0.8,
     rotation: [0, 0, 0],
-    position: [0, -0.8, 0],
+    position: [0, -0.65, 0],
   },
   {
-    name: "Backend Developer",
+    name: "API Design",
     modelPath: `${BASE}models/python-transformed.glb`,
     scale: 0.8,
     rotation: [0, 0, 0],
@@ -131,14 +131,14 @@ const techStackIcons = [
   {
     name: "AWS & Cloud",
     modelPath: `${BASE}models/aws-logo.glb`,
-    scale: 0.5,
+    scale: 0.35,
     rotation: [0, 0, 0],
   },
   {
     name: "Dockerization & Orchestation",
     modelPath: `${BASE}models/kubernetes-logo.glb`,
-    scale: 8,
-    rotation: [0, 0, 0],
+    scale: 50,
+    rotation: [0.5, 0, 0],
   },
   {
     name: "Always Learning",
@@ -150,7 +150,8 @@ const techStackIcons = [
 
 const expCards = [
   {
-    review: "Farid is an exceptionally proactive and focused professional who consistently delivers fast, efficient results. He excels at leveraging specialized tools to solve complex problems, all while ensuring his solutions maintain a strong, human-centric approach. Highly ethical and deeply driven, Farid would be a tremendous asset to any team.",
+    review:
+      "Farid is an exceptionally proactive and focused professional who consistently delivers fast, efficient results. He excels at leveraging specialized tools to solve complex problems, all while ensuring his solutions maintain a strong, human-centric approach. Highly ethical and deeply driven, Farid would be a tremendous asset to any team.",
     imgPath: `${BASE}images/exp1.png`,
     logoPath: `${BASE}images/logo1.png`,
     title: "Data Analyst",
@@ -162,7 +163,8 @@ const expCards = [
     ],
   },
   {
-    review: "Farid is an exceptional investigator who brings a deeply analytical, assertive approach to big data environments. When integrating into major projects, his ramp-up time is virtually non-existent; he quickly masters complex data ecosystems to accelerate project timelines. Most impressively, Farid consistently queries beyond the obvious. He engineered highly efficient, scalable solutions to systemic edge cases our core team had not even contemplated. His commitment to data transparency, optimized workflows, and rigorous efficiency makes him a formidable asset to any technical team.",
+    review:
+      "Farid is an exceptional investigator who brings a deeply analytical, assertive approach to big data environments. When integrating into major projects, his ramp-up time is virtually non-existent; he quickly masters complex data ecosystems to accelerate project timelines. Most impressively, Farid consistently queries beyond the obvious. He engineered highly efficient, scalable solutions to systemic edge cases our core team had not even contemplated. His commitment to data transparency, optimized workflows, and rigorous efficiency makes him a formidable asset to any technical team.",
     imgPath: `${BASE}images/exp2.png`,
     logoPath: `${BASE}images/logo2.png`,
     title: "Associate Investigator",
@@ -174,7 +176,8 @@ const expCards = [
     ],
   },
   {
-    review: "Farid is an exceptionally sharp investigator who delivers rapid, high-impact results. He possesses a remarkable ability to quickly absorb complex information and propose innovative solutions to blind spots we hadn't even recognized. Throughout our engagement, he operated with absolute transparency and rigorous efficiency. He is a highly proactive professional and a decisive asset to any team.",
+    review:
+      "Farid is an exceptionally sharp investigator who delivers rapid, high-impact results. He possesses a remarkable ability to quickly absorb complex information and propose innovative solutions to blind spots we hadn't even recognized. Throughout our engagement, he operated with absolute transparency and rigorous efficiency. He is a highly proactive professional and a decisive asset to any team.",
     imgPath: `${BASE}images/exp3.png`,
     logoPath: `${BASE}images/logo3.png`,
     title: "Lead Investigator",
