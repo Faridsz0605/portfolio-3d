@@ -130,20 +130,20 @@ const techStackIcons = [
   {
     name: "AWS & Cloud",
     modelPath: `${BASE}models/aws-logo.glb`,
-    scale: 0.8,
+    scale: 0.2,
     rotation: [0, 0, 0],
   },
   {
     name: "Dockerization & Orchestation",
     modelPath: `${BASE}models/docker-logo.glb`,
-    scale: 0.05,
+    scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
     name: "Always Learning",
     modelPath: `${BASE}models/git-svg-transformed.glb`,
     scale: 0.05,
-    rotation: [0, -Math.PI / 4, 0],
+    rotation: [0, 0, 0],
   },
 ];
 

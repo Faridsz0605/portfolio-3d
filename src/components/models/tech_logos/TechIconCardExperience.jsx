@@ -7,6 +7,12 @@ const TechIconCardExperience = ({ model }) => {
   const scene = useGLTF(model.modelPath);
 
   useEffect(() => {
+    // Auto-center the model based on its bounding box so all models
+    // sit at the origin regardless of how the GLB was exported.
+    const box = new THREE.Box3().setFromObject(scene.scene);
+    const center = box.getCenter(new THREE.Vector3());
+    scene.scene.position.sub(center);
+
     if (model.name === "Interactive Developer") {
       scene.scene.traverse((child) => {
         if (child.isMesh) {
