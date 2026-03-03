@@ -13,10 +13,10 @@ const navLinks = [
     name: "Skills",
     link: "#skills",
   },
-  {
-    name: "Testimonials",
-    link: "#testimonials",
-  },
+  // {
+  //   name: "Testimonials",
+  //   link: "#testimonials",
+  // },
 ];
 
 const words = [
@@ -151,15 +151,15 @@ const techStackIcons = [
 const expCards = [
   {
     review:
-      "Farid is an exceptionally proactive and focused professional who consistently delivers fast, efficient results. He excels at leveraging specialized tools to solve complex problems, all while ensuring his solutions maintain a strong, human-centric approach. Highly ethical and deeply driven, Farid would be a tremendous asset to any team.",
-    imgPath: `${BASE}images/exp1.png`,
-    logoPath: `${BASE}images/logo1.png`,
-    title: "Data Analyst",
-    date: "June 2025 – January 2026",
+      "Farid is an exceptionally sharp investigator who delivers rapid, high-impact results. He possesses a remarkable ability to quickly absorb complex information and propose innovative solutions to blind spots we hadn't even recognized. Throughout our engagement, he operated with absolute transparency and rigorous efficiency. He is a highly proactive professional and a decisive asset to any team.",
+    imgPath: `${BASE}images/exp3.png`,
+    logoPath: `${BASE}images/logo3.png`,
+    title: "Lead Investigator",
+    date: "June 2022 – January 2026",
     responsibilities: [
-      "Built and automated dashboards from OLAP cube queries to support business decision-making for Human Capital, Finance, and Accounting teams.",
-      "Delivered data modeling and analysis with operational impact across 14+ countries.",
-      "Automated ETL pipelines with Python, managed version control with Git and GitHub, and delivered insights via Power BI with Jupyter Notebook documentation.",
+      "Led the design and implementation of econometric models for academic publications, developing sampling and parameterization tools using R and Python.",
+      "Visualized research insights using Business Intelligence tools.",
+      "Designed and implemented various statistical sampling instruments.",
     ],
   },
   {
@@ -177,15 +177,15 @@ const expCards = [
   },
   {
     review:
-      "Farid is an exceptionally sharp investigator who delivers rapid, high-impact results. He possesses a remarkable ability to quickly absorb complex information and propose innovative solutions to blind spots we hadn't even recognized. Throughout our engagement, he operated with absolute transparency and rigorous efficiency. He is a highly proactive professional and a decisive asset to any team.",
-    imgPath: `${BASE}images/exp3.png`,
-    logoPath: `${BASE}images/logo3.png`,
-    title: "Lead Investigator",
-    date: "June 2022 – January 2026",
+      "Farid is an exceptionally proactive and focused professional who consistently delivers fast, efficient results. He excels at leveraging specialized tools to solve complex problems, all while ensuring his solutions maintain a strong, human-centric approach. Highly ethical and deeply driven, Farid would be a tremendous asset to any team.",
+    imgPath: `${BASE}images/exp1.png`,
+    logoPath: `${BASE}images/logo1.png`,
+    title: "Data Analyst",
+    date: "June 2025 – January 2026",
     responsibilities: [
-      "Led the design and implementation of econometric models for academic publications, developing sampling and parameterization tools using R and Python.",
-      "Visualized research insights using Business Intelligence tools.",
-      "Designed and implemented various statistical sampling instruments.",
+      "Built and automated dashboards from OLAP cube queries to support business decision-making for Human Capital, Finance, and Accounting teams.",
+      "Delivered data modeling and analysis with operational impact across 14+ countries.",
+      "Automated ETL pipelines with Python, managed version control with Git and GitHub, and delivered insights via Power BI with Jupyter Notebook documentation.",
     ],
   },
 ];
