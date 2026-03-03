@@ -56,9 +56,8 @@ const AppShowcase = () => {
             <div className="text-content">
               <h2>wiener-git</h2>
               <p className="text-white-50 md:text-xl">
-                Self-hosted on old hardware using Docker, Cloudflare Tunnels,
-                and a Linux server. Built with React, Three.js, Tailwind CSS,
-                and Git.
+                python written git clone to understand version managing and
+                improving python libraries and CLI logic.
               </p>
             </div>
           </div>
@@ -74,7 +73,9 @@ const AppShowcase = () => {
               </div>
               <h2>WHTTP — HTTP Server in C [IN PROGRESS]</h2>
               <p className="text-white-50">
-                An HTTP server written in C to improve hands-on knowledge on code security and the abstractions needed to handle API communication. Under the umbrella of Wiener Studios.
+                An HTTP server written in C to improve hands-on knowledge on
+                code security and the abstractions needed to handle API
+                communication. Under the umbrella of Wiener Studios.
               </p>
             </div>
 
@@ -88,7 +89,8 @@ const AppShowcase = () => {
               </div>
               <h2>Wiener Tickets — ML Ticket Prediction [IN PROGRESS]</h2>
               <p className="text-white-50">
-                ML model for ticket prediction with an end-to-end MLOps workflow.
+                ML model for ticket prediction with an end-to-end MLOps
+                workflow.
               </p>
             </div>
           </div>
