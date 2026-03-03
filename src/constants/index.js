@@ -120,6 +120,7 @@ const techStackIcons = [
     modelPath: `${BASE}models/arch-logo.glb`,
     scale: 0.8,
     rotation: [0, 0, 0],
+    position: [0, -0.8, 0],
   },
   {
     name: "Backend Developer",
@@ -130,20 +131,20 @@ const techStackIcons = [
   {
     name: "AWS & Cloud",
     modelPath: `${BASE}models/aws-logo.glb`,
-    scale: 0.2,
+    scale: 0.5,
     rotation: [0, 0, 0],
   },
   {
     name: "Dockerization & Orchestation",
-    modelPath: `${BASE}models/docker-logo.glb`,
-    scale: 0.8,
+    modelPath: `${BASE}models/kubernetes-logo.glb`,
+    scale: 8,
     rotation: [0, 0, 0],
   },
   {
     name: "Always Learning",
     modelPath: `${BASE}models/git-svg-transformed.glb`,
     scale: 0.05,
-    rotation: [0, 0, 0],
+    rotation: [0, -Math.PI / 4, 0],
   },
 ];
 
