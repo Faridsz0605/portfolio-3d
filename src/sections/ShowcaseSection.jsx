@@ -48,8 +48,11 @@ const AppShowcase = () => {
           <div ref={rydeRef} className="first-project-wrapper">
             <div className="image-wrapper">
               <img
-                src={`${import.meta.env.BASE_URL}images/project1.png`}
+                src={`${import.meta.env.BASE_URL}images/project1.webp`}
                 alt="wiener-git project screenshot"
+                width="1400"
+                height="776"
+                loading="eager"
                 className="project-screenshot"
               />
             </div>
@@ -66,8 +69,11 @@ const AppShowcase = () => {
             <div className="project" ref={libraryRef}>
               <div className="image-wrapper bg-[#00000000]">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/project2.png`}
+                  src={`${import.meta.env.BASE_URL}images/project2.webp`}
                   alt="WHTTP HTTP Server in C project screenshot"
+                  width="1400"
+                  height="784"
+                  loading="lazy"
                   className="project-screenshot"
                 />
               </div>
@@ -82,8 +88,11 @@ const AppShowcase = () => {
             <div className="project" ref={ycDirectoryRef}>
               <div className="image-wrapper bg-[#00000000]">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/project3.png`}
+                  src={`${import.meta.env.BASE_URL}images/project3.webp`}
                   alt="Wiener Tickets ML Ticket Prediction project screenshot"
+                  width="1400"
+                  height="784"
+                  loading="lazy"
                   className="project-screenshot"
                 />
               </div>

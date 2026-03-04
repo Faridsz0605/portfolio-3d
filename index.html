@@ -2,33 +2,171 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/images/fav.png" />
+    <link rel="icon" type="image/png" href="/images/fav-small.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Farid Sayago &mdash; ML engineer & DevOps Engineer | Portfolio
-    </title>
+    <meta name="author" content="Farid Sayago" />
+
+    <title>Farid Sayago &mdash; MLOps Engineer | Portfolio</title>
     <meta
       name="description"
-      content="I'm Farid Sayago, Passionate ML Engineer & DevOps from Colombia with a background in Python, data pipelines, and cloud infrastructure. This is my personal portfolio."
+      content="MLOps Engineer from Colombia. Python, AWS, Kubernetes, Terraform, data pipelines and AI agent orchestration."
     />
-    <meta
-      property="og:title"
-      content="Farid Sayago — ML engineer & DevOps Engineer | Portfolio "
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Farid Sayago — MLOps Engineer | Portfolio" />
+    <meta property="og:description" content="MLOps Engineer from Colombia. Python, AWS, Kubernetes, Terraform, data pipelines and AI agent orchestration." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://faridsz0605.github.io/portfolio-3d/" />
+    <meta property="og:image" content="https://faridsz0605.github.io/portfolio-3d/images/og-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Farid Sayago Portfolio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Farid Sayago — MLOps Engineer | Portfolio" />
+    <meta name="twitter:description" content="MLOps Engineer from Colombia. Python, AWS, Kubernetes, Terraform, data pipelines and AI agent orchestration." />
+    <meta name="twitter:image" content="https://faridsz0605.github.io/portfolio-3d/images/og-preview.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://faridsz0605.github.io/portfolio-3d/" />
+
+    <!-- Google Fonts — preload to avoid render-blocking @import chain -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
     />
-    <meta
-      property="Farid Sayago"
-      content="I'm Farid Sayago, an aspiring DevOps engineer from Colombia with a background in Python, data pipelines, and cloud infrastructure."
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
     />
-    <meta property="Farid Sayago" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta
-      name="twitter:title"
-      content="Farid Sayago — Aspiring DevOps Engineer | Portfolio"
-    />
-    <meta
-      name="twitter:description"
-      content="I'm Farid Sayago, an aspiring DevOps engineer from Colombia with a background in Python, data pipelines, and cloud infrastructure."
-    />
+
+    <!-- Structured Data: ProfilePage + Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "dateCreated": "2024-01-01",
+      "dateModified": "2026-03-04",
+      "url": "https://faridsz0605.github.io/portfolio-3d/",
+      "name": "Farid Sayago — MLOps Engineer | Portfolio",
+      "description": "MLOps Engineer from Colombia. Python, AWS, Kubernetes, Terraform, data pipelines and AI agent orchestration.",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago",
+        "name": "Farid Sayago",
+        "url": "https://faridsz0605.github.io/portfolio-3d/",
+        "image": "https://faridsz0605.github.io/portfolio-3d/images/fav.png",
+        "jobTitle": "MLOps Engineer",
+        "description": "MLOps Engineer from Colombia specializing in Python, data pipelines, cloud infrastructure, and AI agent orchestration.",
+        "nationality": {
+          "@type": "Country",
+          "name": "Colombia"
+        },
+        "knowsAbout": [
+          "Python",
+          "MLOps",
+          "Machine Learning",
+          "DevOps",
+          "AWS",
+          "Kubernetes",
+          "Docker",
+          "Terraform",
+          "Data Pipelines",
+          "AI Agent Orchestration",
+          "Business Intelligence",
+          "PostgreSQL",
+          "Django",
+          "Flask"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/faridsayago/",
+          "https://github.com/faridsz0605",
+          "https://x.com/farids0805",
+          "https://www.instagram.com/farid_sayago7/"
+        ],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "MLOps Engineer",
+          "occupationLocation": {
+            "@type": "Country",
+            "name": "Colombia"
+          },
+          "skills": "Python, AWS, Kubernetes, Docker, Terraform, Machine Learning, MLOps, Data Pipelines, AI Agent Orchestration"
+        }
+      }
+    }
+    </script>
+
+    <!-- Structured Data: WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://faridsz0605.github.io/portfolio-3d/#website",
+      "url": "https://faridsz0605.github.io/portfolio-3d/",
+      "name": "Farid Sayago — Portfolio",
+      "description": "Personal portfolio of Farid Sayago, MLOps Engineer from Colombia.",
+      "author": {
+        "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago"
+      },
+      "inLanguage": "en"
+    }
+    </script>
+
+    <!-- Structured Data: Projects -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareSourceCode",
+          "@id": "https://faridsz0605.github.io/portfolio-3d/#project-wiener-git",
+          "name": "wiener-git",
+          "description": "A Git clone written in Python to understand version management systems and improve Python library and CLI design skills.",
+          "programmingLanguage": {
+            "@type": "ComputerLanguage",
+            "name": "Python"
+          },
+          "author": {
+            "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago"
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "@id": "https://faridsz0605.github.io/portfolio-3d/#project-whttp",
+          "name": "WHTTP — HTTP Server in C",
+          "description": "An HTTP server written in C to improve hands-on knowledge on code security and the abstractions needed to handle API communication. Part of Wiener Studios.",
+          "programmingLanguage": {
+            "@type": "ComputerLanguage",
+            "name": "C"
+          },
+          "author": {
+            "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago"
+          },
+          "creativeWorkStatus": "InProgress"
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "@id": "https://faridsz0605.github.io/portfolio-3d/#project-wiener-tickets",
+          "name": "Wiener Tickets — ML Ticket Prediction",
+          "description": "Machine learning model for ticket prediction with an end-to-end MLOps workflow using Python.",
+          "programmingLanguage": {
+            "@type": "ComputerLanguage",
+            "name": "Python"
+          },
+          "author": {
+            "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago"
+          },
+          "creativeWorkStatus": "InProgress"
+        }
+      ]
+    }
+    </script>
+
     <link rel="preload" href="/portfolio-3d/models/optimized-room.glb" as="fetch" crossorigin="anonymous" />
   </head>
   <body>
