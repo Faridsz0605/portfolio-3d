@@ -1,372 +1,426 @@
 # Full SEO Audit Report
-## faridsz0605.github.io/portfolio-3d/
+**Site:** https://faridsz0605.github.io/portfolio-3d/
 **Date:** 2026-03-04
-**Audited by:** 4 specialized SEO agents (Technical, Content, Schema, Performance)
+**Business Type:** Developer Portfolio — MLOps / DevOps Engineer (Colombia)
+**Audited by:** 5 specialized SEO subagents (Technical, Content/E-E-A-T, Schema, Performance, Visual)
+
+---
+
+## Overall SEO Health Score: 34 / 100
+
+| Category | Weight | Score | Weighted |
+|----------|--------|-------|---------|
+| Technical SEO | 25% | 42/100 | 10.5 |
+| Content Quality | 25% | 54/100 | 13.5 |
+| On-Page SEO | 20% | 35/100 | 7.0 |
+| Schema / Structured Data | 10% | 0/100 (live) | 0 |
+| Performance (CWV) | 10% | 22/100 | 2.2 |
+| Images | 5% | 15/100 | 0.75 |
+| AI Search Readiness | 5% | 38/100 | 1.9 |
+| **TOTAL** | | | **35.85 → 34** |
+
+> Schema scores **52/100 in source** but **0/100 live** due to a stale build.
+> Content improved from 41→54 since previous audit — many fixes are already in source.
+
+---
+
+## ⚠️ ALERT #0: STALE BUILD — Most Impactful Single Issue
+
+The live site runs a **stale dist build**. Source `index.html` has all recent SEO work. The deployed dist does NOT.
+
+| What's fixed in `index.html` (source) | What's live at the URL |
+|----------------------------------------|------------------------|
+| 3 JSON-LD schema blocks | ZERO structured data |
+| Correct OG tags (`og:description`, `og:type`) | `property="Farid Sayago"` — broken |
+| `<link rel="canonical">` | Missing |
+| Sitemap reference in robots.txt | `robots.txt` → 404 |
+| `sitemap.xml` with correct URL | `sitemap.xml` → 404 |
+| `og:image`, `og:url`, `og:image:width/height` | Missing |
+| `meta name="author"` | Missing |
+| Correct favicon: `fav-small.png`, `type="image/png"` | Old broken favicon |
+| Title: "MLOps Engineer" | "ML engineer & DevOps Engineer" |
+
+**One command fixes 11 of 19 issues:**
+```bash
+npm run build
+# then push dist/ to your gh-pages branch or trigger your CI
+```
 
 ---
 
 ## Executive Summary
 
-**Overall SEO Health Score: 29 / 100**
-
-| Category | Weight | Score | Weighted |
-|----------|--------|-------|---------|
-| Technical SEO | 25% | 38/100 | 9.5 |
-| Content Quality | 25% | 41/100 | 10.3 |
-| On-Page SEO | 20% | 35/100 | 7.0 |
-| Schema / Structured Data | 10% | 0/100 | 0.0 |
-| Performance (Core Web Vitals) | 10% | 15/100 | 1.5 |
-| Images | 5% | 5/100 | 0.3 |
-| AI Search Readiness | 5% | 18/100 | 0.9 |
-| **TOTAL** | **100%** | | **29.5 / 100** |
-
-**Business type detected:** Developer/ML Engineer Personal Portfolio
-**Stack:** React 19 + Vite 6 + Three.js + GSAP + GitHub Pages
-
 ### Top 5 Critical Issues
-1. **Pure Client-Side Rendering** — Googlebot gets `<div id="root"></div>`. Bing and AI crawlers see nothing at all.
-2. **Images are catastrophically oversized** — `project1.png` is **7.9 MB** at 2784×1536. Total page weight: 21+ MB.
-3. **Zero structured data** — No JSON-LD, no Microdata, no valid Open Graph tags.
-4. **No robots.txt, no sitemap.xml** — Crawlers cannot be guided; Google may not even know this URL exists.
-5. **Broken Open Graph tags** — `property="Farid Sayago"` instead of `og:description` / `og:type`.
+1. **Stale dist** — live site is missing ALL SEO improvements made since last commit
+2. **og:image file missing** — `public/images/og-preview.png` does not exist; every social share will fail even after rebuild
+3. **Pure client-side rendering** — Googlebot sees `<div id="root"></div>`; all content invisible to non-JS crawlers (Bing, AI crawlers)
+4. **1.27 MB Three.js bundle** — blocks rendering; LCP estimated >4s on mobile (POOR threshold)
+5. **17.5 MB of unoptimized PNG images** — `project1.png` (7.9 MB), `fav.png` (4.8 MB), `project2.png` (2.7 MB)
 
-### Top 5 Quick Wins (under 30 minutes each)
-1. Create `public/robots.txt` + `public/sitemap.xml` → 10 minutes
-2. Fix broken OG tags + add `og:image`, `og:url`, `og:type`, `og:canonical` → 10 minutes
-3. Add `<script type="application/ld+json">` Person + ProfilePage schema → 20 minutes
-4. Fix favicon MIME type (`image/svg+xml` → `image/png`) → 2 minutes
-5. Convert `fav.png` (4.8 MB) to a 64×64 WebP → 5 minutes
+### Top 5 Quick Wins (< 30 min each)
+1. **Rebuild + deploy** — fixes schema, OG, canonical, robots, sitemap instantly
+2. **Create `og-preview.png`** — screenshot the hero at 1200×630, place in `public/images/`
+3. **Switch to existing WebP** — `project1.webp` and `project2.webp` already exist in `public/images/`; just update constants
+4. **Fix experience counter** — says "1+ Years" but timeline shows June 2022–Jan 2026 (3.5 years)
+5. **Fix "Orchestation" typo** — in `constants/index.js` line 117
 
 ---
 
-## Technical SEO
-
-**Score: 38 / 100**
+## Technical SEO — 42 / 100
 
 ### CRITICAL
 
 #### C-1: Pure Client-Side Rendering
-Every crawlers sees this body:
+Every crawler without JS execution sees:
 ```html
 <body>
   <div id="root"></div>
 </body>
 ```
-All content — experience, skills, projects, titles — is invisible to Bingbot, Apple, and AI crawlers. Google does render JS but defers it days/weeks. For a portfolio meant to be discovered by recruiters, this is the most damaging single issue on the site.
+All experience, skills, projects, and contact are invisible to Bingbot, Apple, and AI crawlers (GPTBot, ClaudeBot, PerplexityBot). Google renders JS but defers it by days to weeks.
 
-**Fix:** Migrate to Astro (ideal for 3D island components) or use `vite-plugin-ssg` / `react-snap` for pre-rendering at build time.
+**Fix options:**
+- `vite-plugin-ssg` for static generation at build time (pragmatic, low effort)
+- Astro with Three.js island components (best long-term for 3D portfolios)
+- `<noscript>` fallback with key content (minimal, immediate)
 
-#### C-2: No robots.txt (404)
+#### C-2: robots.txt → 404 on Live Site
 ```
-GET /portfolio-3d/robots.txt → 404
+GET https://faridsz0605.github.io/portfolio-3d/robots.txt → 404
 ```
-**Fix:** Create `/public/robots.txt`:
-```txt
-User-agent: *
-Allow: /
+File exists at `public/robots.txt` (correct content). Fix: rebuild and deploy.
 
-Sitemap: https://faridsz0605.github.io/portfolio-3d/sitemap.xml
+#### C-3: sitemap.xml → 404 on Live Site
 ```
+GET https://faridsz0605.github.io/portfolio-3d/sitemap.xml → 404
+```
+File exists at `public/sitemap.xml` (correct content). Fix: rebuild and deploy.
 
-#### C-3: No sitemap.xml (404)
+#### C-4: Three.js Bundle Blocks All Rendering
 ```
-GET /portfolio-3d/sitemap.xml → 404
+three-vendor.js    1.27 MB  (synchronous parse before React can mount anything)
+gsap-vendor.js       77 KB
+index.js             72 KB
+optimized-room.glb  806 KB  (preloaded, but Three.js must init first)
 ```
-**Fix:** Create `/public/sitemap.xml`:
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://faridsz0605.github.io/portfolio-3d/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-</urlset>
-```
+Estimated LCP: **> 4 seconds on mobile**. Fails Core Web Vitals.
 
-#### C-4: Three.js Bundles Block Rendering
+#### C-5: og:image File Does Not Exist
 ```
-three-vendor-Cn5xr9tB.js  →  1.27 MB  (synchronous parse before React mounts)
-gsap-vendor-eVHqVK2q.js   →  77 KB
-index-CLGK-H2r.js         →  72 KB
-optimized-room.glb         →  806 KB  (preloaded, but Three.js must init first)
+GET https://faridsz0605.github.io/portfolio-3d/images/og-preview.png → 404
 ```
-Estimated LCP: **>4 seconds** on mid-tier mobile. Poor threshold.
+The source `index.html` references this file but it has never been created.
+**Fix:** Take a 1200×630 screenshot of the hero section and save as `public/images/og-preview.png`.
 
 ### HIGH
 
-#### H-1: Broken Open Graph Tags
+#### H-1: Broken Open Graph Tags (live)
 ```html
-<!-- index.html lines 18-22 — INVALID -->
-<meta property="Farid Sayago" content="I'm Farid Sayago..." />
+<!-- LIVE — BROKEN -->
+<meta property="Farid Sayago" content="..." />
 <meta property="Farid Sayago" content="website" />
-```
-Should be:
-```html
-<meta property="og:description" content="ML Engineer & DevOps from Colombia..." />
+
+<!-- SOURCE — CORRECT (not yet deployed) -->
+<meta property="og:description" content="MLOps Engineer..." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://faridsz0605.github.io/portfolio-3d/" />
-<meta property="og:image" content="https://faridsz0605.github.io/portfolio-3d/images/og-preview.png" />
+<meta property="og:image" content="...og-preview.png" />
 ```
+LinkedIn, Slack, Discord, Twitter/X — all social sharing previews are broken.
 
-#### H-2: No Canonical Tag
-No `<link rel="canonical">`. Add:
-```html
-<link rel="canonical" href="https://faridsz0605.github.io/portfolio-3d/" />
-```
+#### H-2: No Canonical Tag (live)
+Present in source `index.html`. Fix: rebuild.
 
-#### H-3: Missing og:image + twitter:image
-All social shares render with no thumbnail. Fix:
-```html
-<meta property="og:image" content="https://faridsz0605.github.io/portfolio-3d/images/og-preview.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta name="twitter:image" content="https://faridsz0605.github.io/portfolio-3d/images/og-preview.png" />
-<meta name="twitter:card" content="summary_large_image" />
-```
-(Create `og-preview.png` as a 1200×630 screenshot of the hero.)
-
-#### H-4: Title/Identity Inconsistency
-| Tag | Value |
-|-----|-------|
-| `<title>` | "ML engineer & DevOps Engineer" |
-| `twitter:title` | "Aspiring DevOps Engineer" |
-| Hero paragraph | "aspiring DevOps engineer" |
-| Meta description | "Passionate ML Engineer & DevOps" |
-
-Pick one identity. "Aspiring" contradicts 3+ years of documented experience. Remove it.
+#### H-3: Twitter Card is `summary` Instead of `summary_large_image` (live)
+Present correctly in source. Fix: rebuild.
 
 ### MEDIUM
 
 #### M-1: No Mobile Navigation
-`NavBar.jsx` renders only `<nav className="desktop">` — no hamburger menu. Google uses mobile-first indexing. If nav is hidden on mobile, section anchor links are uncrawlable.
+`NavBar.jsx` has only desktop nav. Google uses mobile-first indexing. Section anchor links are not navigable on mobile.
 
-#### M-2: Wrong Favicon MIME Type
-```html
-<!-- index.html line 5 -->
-<link rel="icon" type="image/svg+xml" href="/portfolio-3d/images/fav.png" />
-```
-Fix: `type="image/png"` and replace `fav.png` (4.8 MB, 2048×2048) with a 64×64 PNG (<10 KB).
+#### M-2: No `<noscript>` Fallback
+No fallback HTML for content. The very first Googlebot crawl wave sees nothing.
 
 #### M-3: Security Headers (GitHub Pages limitation)
-Missing: `X-Frame-Options`, `Content-Security-Policy`, `Referrer-Policy`, `Permissions-Policy`. HSTS is present (via GitHub Pages/Fastly). To fix: migrate to Netlify or Cloudflare Pages.
+Missing: `Content-Security-Policy`, `X-Frame-Options`, `Referrer-Policy`. HSTS present via GitHub/Fastly.
+Fix: Migrate to Netlify or Cloudflare Pages (free tier).
+
+#### M-4: AI Crawlers Not Explicitly Allowed in robots.txt
+Consider explicitly permitting `GPTBot`, `ClaudeBot`, `Google-Extended` for AI search visibility — being crawlable by AI assistants increases brand awareness in a portfolio context.
 
 ### LOW
 
-#### L-1: Missing `<meta name="author">`
-```html
-<meta name="author" content="Farid Sayago" />
-```
+#### L-1: Cache-Control max-age=600 on All Assets
+GitHub Pages caches everything for only 10 minutes, including Vite hashed bundles that should be `immutable`. Fix: migrate to Netlify/Cloudflare Pages.
 
-#### L-2: Cache-Control: max-age=600
-GitHub Pages caches all assets for only 10 minutes. Hashed Vite bundles should be `immutable`. GitHub Pages limitation — fix by migrating to Netlify/Cloudflare Pages.
+#### L-2: No `rel="me"` on Social Links
+Add `rel="me"` to footer social links to enable IndieAuth identity verification.
 
 ---
 
-## Content Quality
+## Content Quality — 54 / 100 *(improved from 41 in previous audit)*
 
-**Score: 41 / 100**
+### Improvements Since Last Audit
+Multiple issues were fixed in commit `a692407`:
+- ✅ Single `<h1>` in Hero (was multiple H1s)
+- ✅ `<h2>` on TitleHeader (was h1)
+- ✅ "MLOps Engineer" identity consistent across all meta tags
+- ✅ GitHub added to socialImgs and JSON-LD sameAs
+- ✅ OG tags corrected (not deployed yet, but fixed in source)
+- ✅ canonical, robots.txt, sitemap.xml all added
+- ✅ fav-small.png + correct MIME type
+- ✅ meta author added
 
-### E-E-A-T Assessment
+### E-E-A-T Breakdown
 
-| Pillar | Score | Primary Issue |
-|--------|-------|---------------|
-| Experience | 9/20 | No certification links, no project URLs, anonymous employer logos |
-| Expertise | 12/25 | Soft skills copy is generic, JS-only renders skills invisible |
-| Authoritativeness | 7/25 | No GitHub link anywhere, no external references |
-| Trustworthiness | 13/30 | Identity inconsistency, "Terms & Conditions" link goes nowhere |
+| Pillar | Score | Primary Gap |
+|--------|-------|-------------|
+| Experience | 13/20 | "1+ Years" counter contradicts 3.5-year timeline; no project links; no cert proof |
+| Expertise | 15/25 | Identity consistent; skill labels generic; "Always Learning" is not a skill |
+| Authoritativeness | 11/25 | Schema present; testimonials not rendered; no backlinks; no published work |
+| Trustworthiness | 17/30 | Dead "Terms & Conditions" link; no privacy policy; no direct email |
 
-### Critical Content Issues
+### Remaining Content Issues
 
-#### CC-1: Multiple H1 Tags
-The Hero section renders **3 separate `<h1>` tags** for a single animated phrase. `TitleHeader` also uses `<h1>` for every section title. Total H1 count: 4+.
-**Fix:** Wrap all three Hero spans in ONE `<h1>`. Change all `TitleHeader` components to render `<h2>`.
+#### Content-1: Experience Counter Contradicts Timeline *(HIGH)*
+```js
+// constants/index.js line 34 — WRONG
+{ value: 1, suffix: "+", label: "Years of Experience" }
 
-#### CC-2: No GitHub Link
-A developer portfolio with no GitHub link in navigation or footer is a fatal omission for recruiter E-E-A-T. The `socialImgs` array in `constants/index.js` has Instagram, X, and LinkedIn — but no GitHub.
+// expCards shows roles from June 2022 to Jan 2026 — fix to:
+{ value: 3, suffix: "+", label: "Years of Experience" }
+```
+A quality rater sees "1+ Years" while the timeline below shows 3.5 years. This is the most damaging single trust signal on the page.
 
-#### CC-3: Project Descriptions are Critically Thin
-
+#### Content-2: Project Descriptions Critically Thin *(HIGH)*
 | Project | Words | Links |
 |---------|-------|-------|
-| wiener-git | 22 | None |
-| WHTTP HTTP Server | 31 | None |
-| Wiener Tickets ML | 12 | None |
+| wiener-git | ~22 | None |
+| WHTTP HTTP Server | ~31 | None |
+| Wiener Tickets ML | **~12** | None |
 
-Minimum for meaningful content: 80-100 words per project, plus GitHub repo link.
+The Wiener Tickets ML project — the flagship for an MLOps engineer — gets 12 words. Minimum: 80-100 words per project + GitHub repo link.
 
-#### CC-4: Placeholder Testimonials Reference "Adrian"
-`constants/index.js` lines 187-231 contain a `// TODO` comment and testimonials that say "Adrian" — copied from the original tutorial template and never updated. These are commented out in `App.jsx` but the data still exists. Delete lines 188-231 entirely.
+#### Content-3: "Terms & Conditions" is a Dead Link *(HIGH)*
+In `Footer.jsx`: `<p>Terms & Conditions</p>` with no `<a>` href. A trust signal that leads nowhere is worse than no trust signal. Remove it or link it to an actual page.
 
-#### CC-5: Anonymous Employer Logos
-Experience cards use `logo1.png`, `logo2.png`, `logo3.png` with no company names. From a crawler perspective, these are three unnamed former employers. Add a `company` field with actual organization names.
+#### Content-4: Heading Hierarchy in ShowcaseSection *(MEDIUM)*
+The showcase has no parent `<h2>` section title, then uses `<h2>` for each project name. Should be:
+```
+<h2>Featured Projects</h2>
+  <h3>wiener-git</h3>
+  <h3>WHTTP...</h3>
+  <h3>Wiener Tickets...</h3>
+```
 
-#### CC-6: "Aspiring" Undercuts Authority
-Hero copy: "an aspiring DevOps engineer from Colombia" — but the experience section shows 3+ years of professional roles at 3 organizations. This inconsistency actively hurts E-E-A-T.
+#### Content-5: "Orchestation" Typo *(MEDIUM)*
+`constants/index.js` line 117: `"Dockerization & Orchestation"` → should be `"Orchestration"`.
 
-#### CC-7: Word Count Below Minimum
-Static HTML words: ~0 (everything rendered by JS)
-After JS execution: ~380-420 words
-Minimum for homepage type: 500 words
-**Below threshold even after JavaScript renders.**
+#### Content-6: "Always Learning" is Not a Skill *(MEDIUM)*
+`constants/index.js` line 123. The Git logo 3D model gets labeled "Always Learning". Rename to "Git & Version Control" or similar.
+
+#### Content-7: No GitHub Links on Project Cards *(HIGH)*
+An MLOps engineer portfolio with no repo links on the actual projects is a recruiter red flag. The `socialImgs` footer has GitHub but the project cards have no "View on GitHub" link.
+
+#### Content-8: Testimonials Data Exists But Never Renders *(MEDIUM)*
+`expCards` has 3 rich review quotes attributed to real employers. The Testimonials section is commented out in `App.jsx`. These testimonials being invisible means zero rendered social proof and zero Review schema value.
+
+### Word Count
+| Source | Words |
+|--------|-------|
+| Static HTML (crawler-visible) | **~0** |
+| After full JS render | **~480** |
+| Minimum threshold for homepage | **500** |
+
+The site is below the content floor even with JavaScript fully rendered. With CSR, crawlers see nothing.
 
 ---
 
-## Schema / Structured Data
+## Schema / Structured Data — 0/100 (live), 52/100 (source)
 
-**Score: 0 / 100**
+### Live Site: ZERO Schema
+The deployed dist has no JSON-LD. Google cannot derive structured entity information from this URL.
 
-**Zero structured data found.** No JSON-LD, no Microdata, no RDFa.
+### Source File: 3 JSON-LD Blocks (Need Rebuild + Corrections)
 
-### Recommended JSON-LD (add to `<head>` in `index.html`)
+**Block 1:** `ProfilePage` + nested `Person`
+**Block 2:** `WebSite`
+**Block 3:** `@graph` with 3× `SoftwareSourceCode`
 
-#### Block 1: ProfilePage + Person (Priority 1)
+### Schema Errors to Fix Before Next Rebuild
+
+#### Schema Error 1: Invalid property on Occupation
 ```json
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  "dateCreated": "2024-01-01",
-  "dateModified": "2026-03-04",
-  "url": "https://faridsz0605.github.io/portfolio-3d/",
-  "mainEntity": {
-    "@type": "Person",
-    "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago",
-    "name": "Farid Sayago",
-    "url": "https://faridsz0605.github.io/portfolio-3d/",
-    "jobTitle": "ML Engineer & DevOps Engineer",
-    "nationality": { "@type": "Country", "name": "Colombia" },
-    "knowsAbout": [
-      "Python", "Machine Learning", "DevOps", "MLOps",
-      "AWS", "Kubernetes", "Docker", "Terraform",
-      "Data Pipelines", "Business Intelligence", "PostgreSQL", "Django"
-    ],
-    "sameAs": [
-      "https://www.linkedin.com/in/faridsayago/",
-      "https://x.com/farids0805",
-      "https://www.instagram.com/farid_sayago7/"
-    ]
-  }
-}
-</script>
+// WRONG — "skills" is not a valid Schema.org property on Occupation
+"hasOccupation": { "@type": "Occupation", "skills": ["Python", ...] }
+
+// CORRECT
+"hasOccupation": { "@type": "Occupation", "competencyRequired": ["Python", "AWS", ...] }
 ```
 
-#### Block 2: WebSite (Priority 2)
+#### Schema Error 2: Invalid creativeWorkStatus value
 ```json
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://faridsz0605.github.io/portfolio-3d/#website",
-  "url": "https://faridsz0605.github.io/portfolio-3d/",
-  "name": "Farid Sayago — Portfolio",
-  "author": { "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago" },
-  "inLanguage": "en"
-}
-</script>
+// WRONG — bare string is not a valid enumeration
+"creativeWorkStatus": "InProgress"
+
+// CORRECT — use the full schema.org URI
+"creativeWorkStatus": "https://schema.org/InProgress"
 ```
 
-#### Block 3: SoftwareSourceCode projects (Priority 3)
+#### Schema Error 3: Missing codeRepository on all 3 projects
+`SoftwareSourceCode` loses its primary value without a `codeRepository` pointing to GitHub. Add to each project:
+```json
+"codeRepository": "https://github.com/faridsz0605/YOUR-REPO-NAME"
+```
+
+#### Schema Error 4: image should be ImageObject
+```json
+// WRONG — bare string
+"image": "https://...fav.png"
+
+// CORRECT
+"image": { "@type": "ImageObject", "url": "https://...fav-small.png", "width": 64, "height": 64 }
+```
+
+### Missing HIGH-Value Schema
+
+#### Review Schema (HIGH priority — unlocks rich result potential)
+The `expCards` testimonials map directly to `Review` on `Person`. Add as a 4th JSON-LD block:
 ```json
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
+  "@type": "Person",
+  "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago",
+  "review": [
     {
-      "@type": "SoftwareSourceCode",
-      "name": "wiener-git",
-      "description": "A Git clone written in Python to understand version management systems.",
-      "programmingLanguage": { "@type": "ComputerLanguage", "name": "Python" },
-      "author": { "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago" }
+      "@type": "Review",
+      "reviewBody": "Farid is an exceptionally sharp investigator who delivers rapid, high-impact results...",
+      "author": { "@type": "Organization", "name": "Universidad Santo Tomás" },
+      "itemReviewed": { "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago" }
     },
     {
-      "@type": "SoftwareSourceCode",
-      "name": "WHTTP — HTTP Server in C",
-      "description": "An HTTP server in C to improve knowledge of code security and API abstractions.",
-      "programmingLanguage": { "@type": "ComputerLanguage", "name": "C" },
-      "author": { "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago" }
+      "@type": "Review",
+      "reviewBody": "Farid is an exceptional investigator who brings a deeply analytical, assertive approach to big data environments...",
+      "author": { "@type": "Organization", "name": "Universidad Santo Tomás" },
+      "itemReviewed": { "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago" }
     },
     {
-      "@type": "SoftwareSourceCode",
-      "name": "Wiener Tickets — ML Ticket Prediction",
-      "description": "Machine learning model for ticket prediction with end-to-end MLOps workflow.",
-      "programmingLanguage": { "@type": "ComputerLanguage", "name": "Python" },
-      "author": { "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago" }
+      "@type": "Review",
+      "reviewBody": "Farid is an exceptionally proactive and focused professional who consistently delivers fast, efficient results...",
+      "author": { "@type": "Organization", "name": "Intcomex" },
+      "itemReviewed": { "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago" }
     }
   ]
 }
 </script>
 ```
 
+### Google Rich Result Eligibility
+| Type | Eligible? | Reason |
+|------|-----------|--------|
+| Person Knowledge Panel | Potentially | ProfilePage + Person + sameAs is the exact pattern Google uses |
+| Review Snippets | Conditional | Non-standard on Person; supported by Bing/AI crawlers |
+| Breadcrumbs | N/A | Single-page SPA |
+| SoftwareApplication | No | Would need `SoftwareApplication` type with `applicationCategory` |
+
 ---
 
-## Performance (Core Web Vitals)
+## Performance (Core Web Vitals) — 22 / 100
 
-**Estimated grades: LCP Poor | INP Needs Improvement | CLS Needs Improvement**
+### Estimated Grades
+- **LCP: POOR** (estimated >4s on mobile)
+- **INP: NEEDS IMPROVEMENT** (7 WebGL contexts + heavy JS parse)
+- **CLS: NEEDS IMPROVEMENT** (all `<img>` missing width/height)
 
-### Image Weight — THE Biggest Problem
+### Critical Asset Inventory
+```
+three-vendor.js      1.27 MB   ← synchronous parse blocks React mount
+optimized-room.glb    806 KB   ← preloaded eagerly
+kubernetes-logo.glb   626 KB   ← loaded at TechStack scroll
+aws-logo.glb          455 KB   ← loaded at TechStack scroll
+gsap-vendor.js         77 KB
+index.js               72 KB
+index.css              36 KB
+```
 
-| Image | Actual Size | Dimensions | Target | Reduction |
-|-------|-------------|------------|--------|-----------|
-| `project1.png` | **7.9 MB** | 2784×1536 | <200 KB WebP | 97% |
-| `fav.png` | **4.8 MB** | 2048×2048 | <10 KB PNG | 99.8% |
-| `project2.png` | **2.7 MB** | 2752×1536 | <150 KB WebP | 94% |
-| `exp2.png` | **2.1 MB** | 2752×1536 | <150 KB WebP | 94% |
-| **Total** | **~17.5 MB** | | **~510 KB** | **97%** |
+### Image Weight — THE Biggest Quick Win
+| File | Current | Format | Target | Savings |
+|------|---------|--------|--------|---------|
+| `project1.png` | **7.9 MB** | PNG | `project1.webp` already exists | 97% |
+| `fav.png` | **4.8 MB** | PNG | `fav-small.png` already exists | 99.8% |
+| `project2.png` | **2.7 MB** | PNG | `project2.webp` already exists | 94% |
+| `exp2.png` | **2.1 MB** | PNG | `exp2.webp` already exists | 94% |
+| **Total** | **~17.5 MB** | | **~360 KB** | **98%** |
 
-These 4 files alone account for 17.5 MB of uncompressed PNG. Converting to WebP at display dimensions would save ~17 MB.
+The WebP versions of project1, project2, and exp2 **already exist in `public/images/`**. Only `constants/index.js` needs updating to reference them.
 
 ### LCP Issues
-- Hero `<h1>` starts at `opacity: 0` via GSAP `fromTo` — LCP text is invisible until JS executes
-- `three-vendor.js` (1.27 MB) must parse before React mounts
-- No `fetchpriority="high"` on LCP candidate image
+- Hero `<h1>` starts at `opacity: 0` via GSAP — LCP text invisible until JS executes
+- No `fetchpriority="high"` on the preloaded GLB
 - No `loading="lazy"` on below-fold images
 
-### INP Issues
-- `TechStack` section creates one `<Canvas>` (WebGL context) **per icon** — 5 simultaneous WebGL contexts at scroll
-- GSAP ScrollTrigger on many elements competes on main thread
+### INP Issues (7 WebGL Contexts — Near Browser Limit)
+```
+HeroExperience (room model)           1 Canvas
+TechIconCardExperience × 5           5 Canvas  ← one per icon
+ContactExperience (computer model)   1 Canvas
+─────────────────────────────────────────────
+TOTAL                                7 WebGL contexts
+```
+Browser limit: 8–16 contexts. On mobile this is fragile. Fix: consolidate all 5 TechStack icons into ONE shared `<Canvas>`.
 
 ### CLS Issues
-- All `<img>` tags missing `width` and `height` attributes
-- Google Fonts loaded via `@import` inside CSS file (render-blocking chain, causes FOUT)
-- Fix: Move font to `<link rel="preload">` in HTML `<head>` or self-host
-
-### Caching
-`cache-control: max-age=600` on ALL assets including hashed bundles. GitHub Pages limitation.
-Fix: Migrate to Netlify or Cloudflare Pages (free tier available).
+- All `<img>` tags missing `width` and `height` attributes → layout shifts on image load
+- Google Fonts loaded via `@import` inside CSS → render-blocking chain, FOUT
 
 ---
 
-## AI Search Readiness
+## Images — 15 / 100
 
-**Score: 18 / 100**
-
-AI crawlers (GPTBot, ClaudeBot, PerplexityBot) **do not execute JavaScript**. They see:
-- `<title>` ✓
-- `<meta name="description">` ✓
-- Broken OG tags ✗
-- Empty `<div id="root">` — all content invisible ✗
-- No JSON-LD schema ✗
-
-**What would make this AI-citable:** JSON-LD schema (highest ROI) + SSG pre-rendering (architectural fix).
+| Issue | Files Affected |
+|-------|---------------|
+| Massive PNG files | project1.png (7.9 MB), fav.png (4.8 MB), project2.png (2.7 MB), exp2.png (2.1 MB) |
+| WebP alternatives exist but unused | project1.webp, project2.webp, exp2.webp already in `public/images/` |
+| All `<img>` missing width/height | All project, exp, logo images → causes CLS |
+| alt="" on animated word images | Hero section: ideas.svg, concepts.svg, designs.svg, code.svg |
+| Wrong MIME on favicon link | `type="image/svg+xml"` for a .png file (fixed in source, not deployed) |
 
 ---
 
-## Files to Change
+## AI Search Readiness — 38 / 100
 
-| File | Changes Needed |
-|------|---------------|
-| `index.html` | Fix OG tags, add canonical, add JSON-LD blocks, fix favicon MIME, add author meta |
-| `public/robots.txt` | Create new file |
-| `public/sitemap.xml` | Create new file |
-| `public/images/project1.png` | Convert to WebP, resize to max 1400px wide |
-| `public/images/project2.png` | Convert to WebP, resize to max 1400px wide |
-| `public/images/fav.png` | Resize to 64×64, save as PNG, replace |
-| `public/images/exp2.png` | Convert to WebP, resize to max 800px wide |
-| `src/sections/Hero.jsx` | Fix multiple `<h1>` tags, fix `alt="person"` on word images |
-| `src/components/TitleHeader.jsx` | Change `<h1>` to `<h2>` for section titles |
-| `src/constants/index.js` | Delete placeholder testimonials (lines 188-231), add GitHub to socialImgs, add company names to expCards |
-| `src/sections/ShowcaseSection.jsx` | Add GitHub/demo links per project, expand descriptions |
+AI crawlers (GPTBot, ClaudeBot, PerplexityBot) do not execute JavaScript. They see:
+
+### What AI Crawlers Extract From Source (after rebuild)
+| Signal | Status |
+|--------|--------|
+| `<title>` | ✅ "Farid Sayago — MLOps Engineer \| Portfolio" |
+| `meta name="description"` | ✅ 120-char description with Python, AWS, Kubernetes |
+| OG tags | ✅ All correct in source |
+| JSON-LD ProfilePage + Person | ✅ name, jobTitle, nationality, knowsAbout, sameAs |
+| JSON-LD WebSite | ✅ url, name, author reference |
+| JSON-LD SoftwareSourceCode × 3 | ⚠️ Present but missing codeRepository |
+| Body content | ❌ ABSENT — pure CSR |
+
+### What Would Make This AI-Citable
+1. **JSON-LD schema** — already in source, needs rebuild + error fixes
+2. **Add `codeRepository`** to each SoftwareSourceCode — highest single-field ROI
+3. **SSR/SSG** — makes all content extractable without JS
+4. **`public/llms.txt`** — structured info for AI crawlers (see ACTION-PLAN.md)
+
+---
+
+## Files That Need Changes
+
+| File | Changes Required |
+|------|-----------------|
+| `index.html` | Fix schema errors (competencyRequired, creativeWorkStatus, ImageObject), add Review schema, add codeRepository |
+| `public/images/og-preview.png` | **Create this file** — 1200×630 screenshot of hero |
+| `src/constants/index.js` | Fix exp counter (1→3 years), switch project1/2 to .webp, fix "Orchestation" typo, fix "Always Learning" label |
+| `src/sections/ShowcaseSection.jsx` | Add GitHub links per project, expand descriptions to 80+ words, fix h2→h3 |
+| `src/sections/Footer.jsx` | Fix dead "Terms & Conditions" link (remove or link it) |
 | `src/components/NavBar.jsx` | Add mobile hamburger menu |
-| `src/index.css` | Move `@import` Google Fonts to `<link>` in HTML head |
+| `src/index.css` | Move Google Fonts @import to `<link rel="preload">` in HTML head |
+| `public/llms.txt` | Create — structured AI-readable content |
