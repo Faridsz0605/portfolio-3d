@@ -31,7 +31,7 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 1, suffix: "+", label: "Years of Experience" },
+  { value: 3, suffix: "+", label: "Years of Experience" },
   { value: 4, suffix: "+", label: "Projects Completed" },
   { value: 20, suffix: "+", label: "Certifications" },
   { value: 4, suffix: "+", label: "Ongoing Side Projects" },
@@ -114,13 +114,13 @@ const techStackIcons = [
     rotation: [0, 0, 0],
   },
   {
-    name: "Dockerization & Orchestation",
+    name: "Dockerization & Orchestration",
     modelPath: `${BASE}models/kubernetes-logo.glb`,
     scale: 50,
     rotation: [0.5, 0, 0],
   },
   {
-    name: "Always Learning",
+    name: "Git & Version Control",
     modelPath: `${BASE}models/git-svg-transformed.glb`,
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
@@ -160,7 +160,7 @@ const expCards = [
     review:
       "Farid is an exceptionally proactive and focused professional who consistently delivers fast, efficient results. He excels at leveraging specialized tools to solve complex problems, all while ensuring his solutions maintain a strong, human-centric approach. Highly ethical and deeply driven, Farid would be a tremendous asset to any team.",
     imgPath: `${BASE}images/exp1.png`,
-    logoPath: `${BASE}images/logo1.png`,
+    logoPath: `${BASE}images/logo1.svg`,
     title: "Data Analyst",
     company: "Intcomex",
     date: "June 2025 – January 2026",
@@ -175,7 +175,7 @@ const expCards = [
 const expLogos = [
   {
     name: "logo1",
-    imgPath: `${BASE}images/logo1.png`,
+    imgPath: `${BASE}images/logo1.svg`,
   },
   {
     name: "logo2",

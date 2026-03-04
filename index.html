@@ -59,7 +59,7 @@
         "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago",
         "name": "Farid Sayago",
         "url": "https://faridsz0605.github.io/portfolio-3d/",
-        "image": "https://faridsz0605.github.io/portfolio-3d/images/fav.png",
+        "image": { "@type": "ImageObject", "url": "https://faridsz0605.github.io/portfolio-3d/images/fav-small.png", "width": 64, "height": 64 },
         "jobTitle": "MLOps Engineer",
         "description": "MLOps Engineer from Colombia specializing in Python, data pipelines, cloud infrastructure, and AI agent orchestration.",
         "nationality": {
@@ -95,7 +95,7 @@
             "@type": "Country",
             "name": "Colombia"
           },
-          "skills": "Python, AWS, Kubernetes, Docker, Terraform, Machine Learning, MLOps, Data Pipelines, AI Agent Orchestration"
+          "competencyRequired": ["Python", "AWS", "Kubernetes", "Docker", "Terraform", "MLOps", "Machine Learning", "Data Pipelines", "AI Agent Orchestration"]
         }
       }
     }
@@ -133,7 +133,8 @@
           },
           "author": {
             "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago"
-          }
+          },
+          "codeRepository": "https://github.com/faridsz0605/wiener-git"
         },
         {
           "@type": "SoftwareSourceCode",
@@ -147,7 +148,8 @@
           "author": {
             "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago"
           },
-          "creativeWorkStatus": "InProgress"
+          "codeRepository": "https://github.com/faridsz0605/whttp",
+          "creativeWorkStatus": "https://schema.org/InProgress"
         },
         {
           "@type": "SoftwareSourceCode",
@@ -161,15 +163,54 @@
           "author": {
             "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago"
           },
-          "creativeWorkStatus": "InProgress"
+          "codeRepository": "https://github.com/faridsz0605/wiener-tickets",
+          "creativeWorkStatus": "https://schema.org/InProgress"
         }
       ]
     }
     </script>
 
-    <link rel="preload" href="/portfolio-3d/models/optimized-room.glb" as="fetch" crossorigin="anonymous" />
+    <!-- Structured Data: Reviews -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago",
+      "review": [
+        {
+          "@type": "Review",
+          "reviewBody": "Farid is an exceptionally sharp investigator who delivers rapid, high-impact results. He possesses a remarkable ability to quickly absorb complex information and propose innovative solutions to blind spots we hadn't even recognized.",
+          "author": { "@type": "Organization", "name": "Universidad Santo Tomás" },
+          "itemReviewed": { "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago" }
+        },
+        {
+          "@type": "Review",
+          "reviewBody": "Farid is an exceptional investigator who brings a deeply analytical, assertive approach to big data environments. His ramp-up time is virtually non-existent and he consistently queries beyond the obvious.",
+          "author": { "@type": "Organization", "name": "Universidad Santo Tomás" },
+          "itemReviewed": { "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago" }
+        },
+        {
+          "@type": "Review",
+          "reviewBody": "Farid is an exceptionally proactive and focused professional who consistently delivers fast, efficient results. He excels at leveraging specialized tools to solve complex problems.",
+          "author": { "@type": "Organization", "name": "Intcomex" },
+          "itemReviewed": { "@id": "https://faridsz0605.github.io/portfolio-3d/#farid-sayago" }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preload" href="/portfolio-3d/models/optimized-room.glb" as="fetch" crossorigin="anonymous" fetchpriority="high" />
   </head>
   <body>
+    <noscript>
+      <main>
+        <h1>Farid Sayago — MLOps Engineer</h1>
+        <p>MLOps Engineer from Colombia specializing in Python, AWS, Kubernetes, Docker, Terraform, and AI agent orchestration.</p>
+        <h2>Contact</h2>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/faridsayago/">linkedin.com/in/faridsayago</a></p>
+        <p>GitHub: <a href="https://github.com/faridsz0605">github.com/faridsz0605</a></p>
+      </main>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

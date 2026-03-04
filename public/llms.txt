@@ -1,0 +1,22 @@
+# Farid Sayago — MLOps Engineer Portfolio
+
+Farid Sayago is an MLOps Engineer and DevOps specialist from Colombia.
+He specializes in Python, data pipelines, AWS, Kubernetes, Docker, Terraform, and AI agent orchestration.
+
+## Professional Experience
+- Data Analyst at Intcomex (June 2025 – January 2026): Power BI dashboards, OLAP ETL pipelines, 14+ countries
+- Lead Investigator at Universidad Santo Tomás (June 2022 – January 2026): Econometric models, R, Python, academic publications
+- Associate Investigator at Universidad Santo Tomás (June 2024 – January 2025): Big Data with Dask, automated data pipelines
+
+## Projects
+- wiener-git: Python implementation of a Git clone for understanding version management internals
+- WHTTP: HTTP server written in C for hands-on study of API security and communication abstractions
+- Wiener Tickets: End-to-end MLOps workflow for ML-based ticket prediction using Python
+
+## Tech Stack
+Python, AWS, Kubernetes, Docker, Terraform, Django, Flask, PostgreSQL, Git, Linux, Go, Anthropic MCP
+
+## Contact
+LinkedIn: https://www.linkedin.com/in/faridsayago/
+GitHub: https://github.com/faridsz0605
+X: https://x.com/farids0805
