@@ -117,8 +117,7 @@ const AppShowcase = () => {
                 <img
                   src={`${import.meta.env.BASE_URL}images/github.svg`}
                   alt="GitHub"
-                  width="16"
-                  height="16"
+                  style={{ width: 16, height: 16, flexShrink: 0 }}
                   loading="lazy"
                 />
                 View on GitHub
@@ -156,8 +155,7 @@ const AppShowcase = () => {
                 <img
                   src={`${import.meta.env.BASE_URL}images/github.svg`}
                   alt="GitHub"
-                  width="16"
-                  height="16"
+                  style={{ width: 16, height: 16, flexShrink: 0 }}
                   loading="lazy"
                 />
                 View on GitHub
