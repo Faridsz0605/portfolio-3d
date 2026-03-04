@@ -38,39 +38,18 @@ const counterItems = [
 ];
 
 const logoIconsList = [
-  {
-    imgPath: `${BASE}images/logos/company-logo-1.png`,
-  },
-  {
-    imgPath: `${BASE}images/logos/company-logo-2.png`,
-  },
-  {
-    imgPath: `${BASE}images/logos/company-logo-3.png`,
-  },
-  {
-    imgPath: `${BASE}images/logos/company-logo-4.png`,
-  },
-  {
-    imgPath: `${BASE}images/logos/company-logo-5.png`,
-  },
-  {
-    imgPath: `${BASE}images/logos/company-logo-6.png`,
-  },
-  {
-    imgPath: `${BASE}images/logos/company-logo-7.png`,
-  },
-  {
-    imgPath: `${BASE}images/logos/company-logo-8.png`,
-  },
-  {
-    imgPath: `${BASE}images/logos/company-logo-9.png`,
-  },
-  {
-    imgPath: `${BASE}images/logos/company-logo-10.png`,
-  },
-  {
-    imgPath: `${BASE}images/logos/company-logo-11.png`,
-  },
+  { imgPath: `${BASE}images/logos/company-logo-1.svg`, name: "Django", isDjango: true },
+  { imgPath: `${BASE}images/logos/company-logo-2.svg`, name: "PostgreSQL" },
+  { imgPath: `${BASE}images/logos/company-logo-3.svg`, name: "Anthropic" },
+  { imgPath: `${BASE}images/logos/company-logo-4.svg`, name: "Flask" },
+  { imgPath: `${BASE}images/logos/company-logo-5.svg`, name: "ModelContextProtocol" },
+  { imgPath: `${BASE}images/logos/company-logo-6.svg`, name: "Terraform", isIcon: true },
+  { imgPath: `${BASE}images/logos/company-logo-7.svg`, name: "MDX", isIcon: true },
+  { imgPath: `${BASE}images/logos/company-logo-8.svg`, name: "Prisma", isIcon: true },
+  { imgPath: `${BASE}images/logos/company-logo-9.svg`, name: "GitHub" },
+  { imgPath: `${BASE}images/logos/company-logo-10.svg`, name: "Kubernetes", isIcon: true },
+  { imgPath: `${BASE}images/logos/company-logo-11.svg`, name: "Python", isIcon: true },
+  { imgPath: `${BASE}images/logos/company-logo-12.svg`, name: "Go", isIcon: true },
 ];
 
 const abilities = [
@@ -87,7 +66,7 @@ const abilities = [
   {
     imgPath: `${BASE}images/time.png`,
     title: "Power Documentation",
-    desc: "'Knowledge is a treasure and it should not be locked away.' Let's learn from each other.",
+    desc: "Markdown-based documentation integrated with Notion to centralize knowledge, track team progress in real time, and keep every stakeholder aligned throughout the project lifecycle.",
   },
 ];
 
