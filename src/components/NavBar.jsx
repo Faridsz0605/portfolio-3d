@@ -3,52 +3,98 @@ import { useState, useEffect } from "react";
 import { navLinks } from "../constants";
 
 const NavBar = () => {
-  // track if the user has scrolled down the page
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    // create an event listener for when the user scrolls
-    const handleScroll = () => {
-      // check if the user has scrolled down at least 10px
-      // if so, set the state to true
-      const isScrolled = window.scrollY > 10;
-      setScrolled(isScrolled);
-    };
-
-    // add the event listener to the window
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
-
-    // cleanup the event listener when the component is unmounted
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
-      <div className="inner">
-        <a href="#hero" className="logo">
-          Farid Sayago
-        </a>
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
-        <nav className="desktop">
+  const closeMenu = () => setMenuOpen(false);
+
+  return (
+    <>
+      <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
+        <div className="inner">
+          <a href="#hero" className="logo">
+            Farid Sayago
+          </a>
+
+          <nav className="desktop">
+            <ul>
+              {navLinks.map(({ link, name }) => (
+                <li key={name} className="group">
+                  <a href={link}>
+                    <span>{name}</span>
+                    <span className="underline" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="flex items-center gap-4">
+            <a href="#contact" className="contact-btn group hidden lg:flex">
+              <div className="inner">
+                <span>Contact me</span>
+              </div>
+            </a>
+
+            <button
+              className="hamburger lg:hidden"
+              onClick={() => setMenuOpen((prev) => !prev)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+            >
+              <img
+                src={`${import.meta.env.BASE_URL}images/${menuOpen ? "x" : "menu"}.svg`}
+                alt=""
+                width="24"
+                height="24"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div
+        className={`mobile-menu ${menuOpen ? "open" : ""}`}
+        aria-hidden={!menuOpen}
+      >
+        <nav>
           <ul>
             {navLinks.map(({ link, name }) => (
-              <li key={name} className="group">
-                <a href={link}>
-                  <span>{name}</span>
-                  <span className="underline" />
+              <li key={name}>
+                <a href={link} onClick={closeMenu}>
+                  {name}
                 </a>
               </li>
             ))}
           </ul>
+          <a href="#contact" className="mobile-contact-btn" onClick={closeMenu}>
+            Contact me
+          </a>
         </nav>
-
-        <a href="#contact" className="contact-btn group">
-          <div className="inner">
-            <span>Contact me</span>
-          </div>
-        </a>
       </div>
-    </header>
+
+      {menuOpen && (
+        <div
+          className="fixed inset-0 z-[90] bg-black/50 backdrop-blur-sm"
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
+      )}
+    </>
   );
 };
 
