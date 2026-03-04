@@ -9,7 +9,7 @@ import HeroExperience from "../components/models/hero_models/HeroExperience";
 const Hero = () => {
   useGSAP(() => {
     gsap.fromTo(
-      ".hero-text h1",
+      ".hero-text .line",
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" },
     );
@@ -27,37 +27,39 @@ const Hero = () => {
           <div className="flex flex-col gap-7">
             <div className="hero-text">
               <h1>
-                Shaping
-                <span className="slide">
-                  <span className="wrapper">
-                    {words.map((word, index) => (
-                      <span
-                        key={index}
-                        className="flex items-center md:gap-3 gap-1 pb-2"
-                      >
-                        <img
-                          src={word.imgPath}
-                          alt="person"
-                          className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
-                        />
-                        <span>{word.text}</span>
-                      </span>
-                    ))}
+                <span className="line block">
+                  Shaping
+                  <span className="slide">
+                    <span className="wrapper">
+                      {words.map((word, index) => (
+                        <span
+                          key={index}
+                          className="flex items-center md:gap-3 gap-1 pb-2"
+                        >
+                          <img
+                            src={word.imgPath}
+                            alt={word.text}
+                            className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
+                          />
+                          <span>{word.text}</span>
+                        </span>
+                      ))}
+                    </span>
                   </span>
                 </span>
+                <span className="line block">into Real Solutions</span>
+                <span className="line block">that Deliver Results</span>
               </h1>
-              <h1>into Real Solutions</h1>
-              <h1>that Deliver Results</h1>
             </div>
 
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hey, I'm Farid, an aspiring DevOps engineer from Colombia, passionate about tech{" "}
+              Hey, I&apos;m Farid — MLOps Engineer from Colombia building data pipelines,{" "}
               <br />
-              and looking forward to meeting you :)
+              cloud infrastructure and AI systems. Let&apos;s build something together.
             </p>
 
             <Button
-              text="Take a look :)"
+              text="See my work"
               className="md:w-80 md:h-16 w-60 h-12"
               id="counter"
             />

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://faridsz0605.github.io/portfolio-3d/sitemap.xml

@@ -134,6 +134,7 @@ const expCards = [
     imgPath: `${BASE}images/exp3.png`,
     logoPath: `${BASE}images/logo3.png`,
     title: "Lead Investigator",
+    company: "Universidad Santo Tomás",
     date: "June 2022 – January 2026",
     responsibilities: [
       "Led the design and implementation of econometric models for academic publications, developing sampling and parameterization tools using R and Python.",
@@ -144,9 +145,10 @@ const expCards = [
   {
     review:
       "Farid is an exceptional investigator who brings a deeply analytical, assertive approach to big data environments. When integrating into major projects, his ramp-up time is virtually non-existent; he quickly masters complex data ecosystems to accelerate project timelines. Most impressively, Farid consistently queries beyond the obvious. He engineered highly efficient, scalable solutions to systemic edge cases our core team had not even contemplated. His commitment to data transparency, optimized workflows, and rigorous efficiency makes him a formidable asset to any technical team.",
-    imgPath: `${BASE}images/exp2.png`,
+    imgPath: `${BASE}images/exp2.webp`,
     logoPath: `${BASE}images/logo2.png`,
     title: "Associate Investigator",
+    company: "Universidad Santo Tomás",
     date: "June 2024 – January 2025",
     responsibilities: [
       "Implemented Big Data processing scripts for a foreign trade research project, using tools such as Dask.",
@@ -160,6 +162,7 @@ const expCards = [
     imgPath: `${BASE}images/exp1.png`,
     logoPath: `${BASE}images/logo1.png`,
     title: "Data Analyst",
+    company: "Intcomex",
     date: "June 2025 – January 2026",
     responsibilities: [
       "Built and automated dashboards from OLAP cube queries to support business decision-making for Human Capital, Finance, and Accounting teams.",
@@ -184,57 +187,17 @@ const expLogos = [
   },
 ];
 
-// TODO: Replace placeholder testimonials with real quotes from peers and collaborators.
-const testimonials = [
-  {
-    name: "Esther Howard",
-    mentions: "@estherhoward",
-    review:
-      "I can't say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-    imgPath: `${BASE}images/client1.png`,
-  },
-  {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
-    review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-    imgPath: `${BASE}images/client3.png`,
-  },
-  {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
-    review:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    imgPath: `${BASE}images/client2.png`,
-  },
-  {
-    name: "Marvin McKinney",
-    mentions: "@marvinmckinney",
-    review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that's both modern and easy to navigate. Fantastic work overall.",
-    imgPath: `${BASE}images/client5.png`,
-  },
-  {
-    name: "Floyd Miles",
-    mentions: "@floydmiles",
-    review:
-      "Adrian's expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He's a true professional!",
-    imgPath: `${BASE}images/client4.png`,
-  },
-  {
-    name: "Albert Flores",
-    mentions: "@albertflores",
-    review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
-    imgPath: `${BASE}images/client6.png`,
-  },
-];
 
 const socialImgs = [
   {
-    name: "insta",
-    imgPath: `${BASE}images/insta.png`,
-    link: "https://www.instagram.com/farid_sayago7/",
+    name: "github",
+    imgPath: `${BASE}images/github.svg`,
+    link: "https://github.com/faridsz0605",
+  },
+  {
+    name: "linkedin",
+    imgPath: `${BASE}images/linkedin.png`,
+    link: "https://www.linkedin.com/in/faridsayago/",
   },
   {
     name: "x",
@@ -242,9 +205,9 @@ const socialImgs = [
     link: "https://x.com/farids0805",
   },
   {
-    name: "linkedin",
-    imgPath: `${BASE}images/linkedin.png`,
-    link: "https://www.linkedin.com/in/faridsayago/",
+    name: "insta",
+    imgPath: `${BASE}images/insta.png`,
+    link: "https://www.instagram.com/farid_sayago7/",
   },
 ];
 
@@ -255,7 +218,6 @@ export {
   counterItems,
   expCards,
   expLogos,
-  testimonials,
   socialImgs,
   techStackIcons,
   techStackImgs,
