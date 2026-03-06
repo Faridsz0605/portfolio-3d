@@ -26,12 +26,12 @@
 	.st20{fill-rule:evenodd;clip-rule:evenodd;fill:#E4B326;}
 	.st21{fill-rule:evenodd;clip-rule:evenodd;fill:#E6B828;}
 	.st22{fill-rule:evenodd;clip-rule:evenodd;fill:#C82429;}
-	.st23{fill:none;stroke:#292324;stroke-width:0.078;stroke-miterlimit:22.9260006;}
-	.st24{fill-rule:evenodd;clip-rule:evenodd;fill:#292324;}
+	.st23{fill:none;stroke:#ffffff;stroke-width:0.078;stroke-miterlimit:22.9260006;}
+	.st24{fill-rule:evenodd;clip-rule:evenodd;fill:#ffffff;}
 	.st25{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
-	.st26{fill-rule:evenodd;clip-rule:evenodd;fill:#292222;}
-	.st27{fill:none;stroke:#292222;stroke-width:0.116;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9260006;}
-	.st28{fill:#292222;}
+	.st26{fill-rule:evenodd;clip-rule:evenodd;fill:#ffffff;}
+	.st27{fill:none;stroke:#ffffff;stroke-width:0.116;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9260006;}
+	.st28{fill:#ffffff;}
 </style>
 <g>
 	<path class="st0" d="M66.7782516,0.6167438c20.2149963,0,36.7059937,16.4890137,36.7059937,36.7060242
