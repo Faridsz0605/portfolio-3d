@@ -1,5 +1,4 @@
-<!-- TODO: Replace the placeholder below with your actual banner screenshot or OG image once available -->
-<!-- ![Portfolio Banner](./public/images/banner.png) -->
+
 
 <div align="center">
 
