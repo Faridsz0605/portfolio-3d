@@ -282,17 +282,8 @@ section {
     @apply md:w-40 w-32;
   }
 
-  .timeline-wrapper {
-    @apply absolute left-1/2 -translate-x-1/2 top-full flex justify-center;
-    height: 600px;
-  }
-
-  .timeline {
-    @apply absolute z-30 h-full top-0 w-1 bg-black;
-  }
-
   .timeline-logo {
-    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-black-50 bg-black-100;
+    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center border border-black-50 bg-black-100;
   }
 
   .exp-card-wrapper {
@@ -412,11 +403,13 @@ section {
 .gradient-line {
   width: 2px;
   background: linear-gradient(
-    0deg,
-    rgba(109, 69, 206, 0) 0%,
-    #8b5cf6 50%,
-    rgba(109, 69, 206, 0) 100%
+    180deg,
+    rgba(139, 92, 246, 0.15) 0%,
+    #8b5cf6 8%,
+    #8b5cf6 92%,
+    rgba(139, 92, 246, 0.15) 100%
   );
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
 }
 
 .gradient-edge:nth-of-type(1) {
