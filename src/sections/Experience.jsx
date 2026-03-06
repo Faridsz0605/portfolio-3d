@@ -91,40 +91,40 @@ const Experience = () => {
               <div key={card.title} className="exp-card-wrapper">
                 <div className="xl:w-2/6">
                   <GlowCard card={card}>
-                    <div className="overflow-hidden">
-                      <img src={card.imgPath} alt="exp-img" className="w-full scale-110" />
+                    <div>
+                      <img src={card.imgPath} alt="exp-img" className="w-full scale-90" />
                     </div>
                   </GlowCard>
                 </div>
                 <div className="xl:w-4/6">
-                  <div className="flex items-start">
-                    <div className="timeline-wrapper">
-                      <div className="timeline" />
-                      <div className="gradient-line w-1 h-full" />
-                    </div>
-                    <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
+                  <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
+                    <div className="relative flex-none">
                       <div className={`timeline-logo ${card.logoBg ?? ""}`}>
                         <img src={card.logoPath} alt="logo" className="object-contain p-1 w-full h-full" />
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-3xl">{card.title}</h3>
-                        <p className="text-white-50 text-lg mt-1">{card.company}</p>
-                        <p className="my-5 text-white-50">
-                          🗓️&nbsp;{card.date}
-                        </p>
-                        <p className="text-[#839CB5] italic">
-                          Responsibilities
-                        </p>
-                        <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
-                          {card.responsibilities.map(
-                            (responsibility, index) => (
-                              <li key={index} className="text-lg">
-                                {responsibility}
-                              </li>
-                            ),
-                          )}
-                        </ul>
+                      <div className="timeline-wrapper">
+                        <div className="timeline" />
+                        <div className="gradient-line w-1 h-full" />
                       </div>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-3xl">{card.title}</h3>
+                      <p className="text-white-50 text-lg mt-1">{card.company}</p>
+                      <p className="my-5 text-white-50">
+                        🗓️&nbsp;{card.date}
+                      </p>
+                      <p className="text-[#839CB5] italic">
+                        Responsibilities
+                      </p>
+                      <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
+                        {card.responsibilities.map(
+                          (responsibility, index) => (
+                            <li key={index} className="text-lg">
+                              {responsibility}
+                            </li>
+                          ),
+                        )}
+                      </ul>
                     </div>
                   </div>
                 </div>
