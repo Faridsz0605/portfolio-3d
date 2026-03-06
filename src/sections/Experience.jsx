@@ -36,16 +36,18 @@ const Experience = () => {
       });
     });
 
-    gsap.to(".timeline", {
-      scaleY: 0,
-      transformOrigin: "bottom bottom",
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".timeline",
-        start: "top center",
-        end: "70% center",
-        scrub: true,
-      },
+    gsap.utils.toArray(".timeline").forEach((el) => {
+      gsap.to(el, {
+        scaleY: 0,
+        transformOrigin: "bottom bottom",
+        ease: "none",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: true,
+        },
+      });
     });
 
     // Loop through each expText element and animate them in
@@ -85,7 +87,7 @@ const Experience = () => {
           title="Professional Work Experience"
           sub="Career Overview."
         />
-        <div className="mt-32 relative">
+        <div className="mt-32 relative overflow-hidden">
           <div className="relative z-50 xl:space-y-32 space-y-10">
             {expCards.map((card) => (
               <div key={card.title} className="exp-card-wrapper">
