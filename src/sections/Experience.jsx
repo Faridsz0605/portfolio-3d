@@ -105,7 +105,7 @@ const Experience = () => {
                       <img
                         src={card.imgPath}
                         alt={`${card.title} at ${card.company}`}
-                        className="w-full scale-[0.62]"
+                        className="w-full scale-[0.50] origin-top-left"
                       />
                     </div>
                   </GlowCard>
