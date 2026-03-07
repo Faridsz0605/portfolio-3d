@@ -30,7 +30,7 @@ const GlowCard = ({ card, index, children }) => {
     <div
       ref={(el) => (cardRefs.current[index] = el)}
       onMouseMove={handleMouseMove(index)}
-      className="card card-border timeline-card rounded-xl p-6 mb-5 break-inside-avoid-column"
+      className="card card-border timeline-card rounded-xl p-4 mb-5 break-inside-avoid-column flex flex-col"
     >
       <div className="glow"></div>
       <div className="flex items-center gap-1 mb-3">
@@ -38,9 +38,10 @@ const GlowCard = ({ card, index, children }) => {
           <img key={i} src={`${import.meta.env.BASE_URL}images/star.png`} alt="star" className="size-4" />
         ))}
       </div>
-      <div className="mb-3">
-        <p className="text-white-50 text-base">{card.review}</p>
+      <div className="mb-2">
+        <p className="text-white-50 text-sm">{card.review}</p>
       </div>
+      <div className="mt-auto pt-4" />
       {children}
     </div>
   );
