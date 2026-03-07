@@ -283,7 +283,7 @@ section {
   }
 
   .timeline-logo {
-    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center border border-black-50 bg-black-100;
+    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center border border-black-50 bg-black-100 overflow-hidden;
   }
 
   .exp-card-wrapper {

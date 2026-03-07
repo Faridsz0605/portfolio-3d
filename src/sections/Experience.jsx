@@ -45,7 +45,7 @@ const Experience = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top center",
-          end: "bottom 20%",
+          end: "bottom 80%",
           scrub: 0.5,
         },
       },
@@ -120,7 +120,7 @@ const Experience = () => {
                         <img
                           src={card.logoPath}
                           alt="logo"
-                          className="object-contain p-1 w-full h-full"
+                          className={`w-full h-full ${card.logoClass ?? "object-contain p-1"}`}
                         />
                       </div>
                     </div>
