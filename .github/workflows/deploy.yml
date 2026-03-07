@@ -36,4 +36,5 @@ jobs:
           ssh_private_key: ${{ secrets.HOSTINGER_SSH_KEY }}
           local_path: ./dist/*
           remote_path: ${{ secrets.HOSTINGER_REMOTE_PATH }}
+          port: 65002
           sftp_only: true
