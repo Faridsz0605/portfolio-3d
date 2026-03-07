@@ -133,6 +133,10 @@ const AppShowcase = () => {
                   height="784"
                   loading="lazy"
                   className="project-screenshot"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = `${import.meta.env.BASE_URL}images/project3.png`;
+                  }}
                 />
               </div>
               <h2>Wiener Tickets — ML Ticket Prediction [IN PROGRESS]</h2>

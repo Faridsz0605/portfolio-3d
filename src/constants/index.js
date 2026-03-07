@@ -130,7 +130,7 @@ const techStackIcons = [
 const expCards = [
   {
     review:
-      "Farid is an exceptionally sharp investigator who delivers rapid, high-impact results. He possesses a remarkable ability to quickly absorb complex information and propose innovative solutions to blind spots we hadn't even recognized. Throughout our engagement, he operated with absolute transparency and rigorous efficiency. He is a highly proactive professional and a decisive asset to any team.",
+      "Delivers high-impact results with exceptional analytical rigor. Quickly absorbs complex information and identifies improvement opportunities with full transparency and efficiency.",
     imgPath: `${BASE}images/exp2.webp`,
     logoPath: `${BASE}images/logo1.svg`,
     logoBg: "bg-white",
@@ -138,14 +138,14 @@ const expCards = [
     company: "Universidad Santo Tomás",
     date: "June 2022 – January 2026",
     responsibilities: [
-      "Led the design and implementation of econometric models for academic publications, developing sampling and parameterization tools using R and Python.",
-      "Visualized research insights using Business Intelligence tools.",
-      "Designed and implemented various statistical sampling instruments.",
+      "Designed and implemented econometric models for academic publications using R and Python.",
+      "Delivered research insights through Business Intelligence visualizations.",
+      "Developed statistical sampling instruments and parameterization tools.",
     ],
   },
   {
     review:
-      "Farid is an exceptional investigator who brings a deeply analytical, assertive approach to big data environments. When integrating into major projects, his ramp-up time is virtually non-existent; he quickly masters complex data ecosystems to accelerate project timelines. Most impressively, Farid consistently queries beyond the obvious. He engineered highly efficient, scalable solutions to systemic edge cases our core team had not even contemplated. His commitment to data transparency, optimized workflows, and rigorous efficiency makes him a formidable asset to any technical team.",
+      "Brings a deeply analytical approach to big data environments with near-zero ramp-up time. Engineers scalable solutions to complex edge cases while maintaining data transparency and workflow efficiency.",
     imgPath: `${BASE}images/exp2.webp`,
     logoPath: `${BASE}images/logo1.svg`,
     logoBg: "bg-white",
@@ -153,14 +153,14 @@ const expCards = [
     company: "Universidad Santo Tomás",
     date: "June 2024 – January 2025",
     responsibilities: [
-      "Implemented Big Data processing scripts for a foreign trade research project, using tools such as Dask.",
-      "Applied ethical standards in the use of AI tools integrated into the research workflow.",
-      "Automated data pipelines with Python to handle large volumes of external trade data.",
+      "Built Big Data processing scripts for foreign trade research using Dask and Python.",
+      "Applied ethical AI standards within the research workflow.",
+      "Automated data pipelines to handle large-scale external trade datasets.",
     ],
   },
   {
     review:
-      "Farid is an exceptionally proactive and focused professional who consistently delivers fast, efficient results. He excels at leveraging specialized tools to solve complex problems, all while ensuring his solutions maintain a strong, human-centric approach. Highly ethical and deeply driven, Farid would be a tremendous asset to any team.",
+      "Proactive professional who delivers fast, efficient results. Leverages specialized tools to solve complex problems with a strong human-centric and ethical approach.",
     imgPath: `${BASE}images/exp1.png`,
     logoPath: `${BASE}images/intcomex.jpeg`,
     logoClass: "object-cover",
@@ -168,9 +168,9 @@ const expCards = [
     company: "Intcomex",
     date: "June 2025 – January 2026",
     responsibilities: [
-      "Built and automated dashboards from OLAP cube queries to support business decision-making for Human Capital, Finance, and Accounting teams.",
+      "Automated dashboards from OLAP cube queries for Human Capital, Finance, and Accounting teams.",
       "Delivered data modeling and analysis with operational impact across 14+ countries.",
-      "Automated ETL pipelines with Python, managed version control with Git and GitHub, and delivered insights via Power BI with Jupyter Notebook documentation.",
+      "Built ETL pipelines with Python and delivered insights via Power BI with documented workflows.",
     ],
   },
 ];
