@@ -101,11 +101,11 @@ const Experience = () => {
               <div key={card.title} className="exp-card-wrapper">
                 <div className="xl:w-2/6">
                   <GlowCard card={card}>
-                    <div>
+                    <div className="overflow-hidden">
                       <img
                         src={card.imgPath}
                         alt={`${card.title} at ${card.company}`}
-                        className="w-full scale-[0.40] origin-top-left"
+                        className="w-[40%]"
                       />
                     </div>
                   </GlowCard>
