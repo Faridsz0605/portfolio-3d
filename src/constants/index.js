@@ -131,7 +131,7 @@ const expCards = [
   {
     review:
       "Farid is an exceptionally sharp investigator who delivers rapid, high-impact results. He possesses a remarkable ability to quickly absorb complex information and propose innovative solutions to blind spots we hadn't even recognized. Throughout our engagement, he operated with absolute transparency and rigorous efficiency. He is a highly proactive professional and a decisive asset to any team.",
-    imgPath: `${BASE}images/exp2.svg`,
+    imgPath: `${BASE}images/exp2.webp`,
     logoPath: `${BASE}images/logo1.svg`,
     logoBg: "bg-white",
     title: "Lead Investigator",
@@ -146,7 +146,7 @@ const expCards = [
   {
     review:
       "Farid is an exceptional investigator who brings a deeply analytical, assertive approach to big data environments. When integrating into major projects, his ramp-up time is virtually non-existent; he quickly masters complex data ecosystems to accelerate project timelines. Most impressively, Farid consistently queries beyond the obvious. He engineered highly efficient, scalable solutions to systemic edge cases our core team had not even contemplated. His commitment to data transparency, optimized workflows, and rigorous efficiency makes him a formidable asset to any technical team.",
-    imgPath: `${BASE}images/exp2.svg`,
+    imgPath: `${BASE}images/exp2.webp`,
     logoPath: `${BASE}images/logo1.svg`,
     logoBg: "bg-white",
     title: "Associate Investigator",
@@ -162,7 +162,8 @@ const expCards = [
     review:
       "Farid is an exceptionally proactive and focused professional who consistently delivers fast, efficient results. He excels at leveraging specialized tools to solve complex problems, all while ensuring his solutions maintain a strong, human-centric approach. Highly ethical and deeply driven, Farid would be a tremendous asset to any team.",
     imgPath: `${BASE}images/exp1.png`,
-    logoPath: `${BASE}images/logo1.svg`,
+    logoPath: `${BASE}images/intcomex.jpeg`,
+    logoClass: "object-cover",
     title: "Data Analyst",
     company: "Intcomex",
     date: "June 2025 – January 2026",
