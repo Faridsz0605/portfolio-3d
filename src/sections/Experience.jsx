@@ -104,7 +104,7 @@ const Experience = () => {
                     <div>
                       <img
                         src={card.imgPath}
-                        alt="exp-img"
+                        alt={`${card.title} at ${card.company}`}
                         className="w-full scale-[0.855]"
                       />
                     </div>
@@ -119,7 +119,7 @@ const Experience = () => {
                       >
                         <img
                           src={card.logoPath}
-                          alt="logo"
+                          alt={`${card.company} logo`}
                           className={`w-full h-full ${card.logoClass ?? "object-contain p-1"}`}
                         />
                       </div>
