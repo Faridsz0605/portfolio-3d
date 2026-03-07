@@ -45,7 +45,7 @@ const Experience = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top center",
-          end: "bottom center",
+          end: "bottom 20%",
           scrub: 0.5,
         },
       },
@@ -105,7 +105,7 @@ const Experience = () => {
                       <img
                         src={card.imgPath}
                         alt="exp-img"
-                        className="w-full scale-90"
+                        className="w-full scale-[0.855]"
                       />
                     </div>
                   </GlowCard>

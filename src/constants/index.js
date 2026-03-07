@@ -31,10 +31,10 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 3, suffix: "+", label: "Years of Experience" },
-  { value: 4, suffix: "+", label: "Projects Completed" },
-  { value: 20, suffix: "+", label: "Certifications" },
-  { value: 4, suffix: "+", label: "Ongoing Side Projects" },
+  { value: 1, suffix: "+", label: "Years of Experience" },
+  { value: 2, suffix: "+", label: "Papers Written/Collaborated" },
+  { value: 30, suffix: "+", label: "Certifications" },
+  { value: 5, suffix: "+", label: "Ongoing Projects" },
 ];
 
 const logoIconsList = [
