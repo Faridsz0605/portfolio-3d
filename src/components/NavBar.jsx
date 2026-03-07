@@ -58,7 +58,7 @@ const NavBar = () => {
             >
               <img
                 src={`${import.meta.env.BASE_URL}images/${menuOpen ? "x" : "menu"}.svg`}
-                alt=""
+                alt={menuOpen ? "Close menu" : "Open menu"}
                 width="24"
                 height="24"
               />
