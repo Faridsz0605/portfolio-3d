@@ -38,18 +38,49 @@ const counterItems = [
 ];
 
 const logoIconsList = [
-  { imgPath: `${BASE}images/logos/company-logo-1.svg`, name: "Django", isDjango: true },
+  {
+    imgPath: `${BASE}images/logos/company-logo-1.svg`,
+    name: "Django",
+    isDjango: true,
+  },
   { imgPath: `${BASE}images/logos/company-logo-2.svg`, name: "PostgreSQL" },
   { imgPath: `${BASE}images/logos/company-logo-3.svg`, name: "Anthropic" },
   { imgPath: `${BASE}images/logos/company-logo-4.svg`, name: "Flask" },
-  { imgPath: `${BASE}images/logos/company-logo-5.svg`, name: "ModelContextProtocol" },
-  { imgPath: `${BASE}images/logos/company-logo-6.svg`, name: "Terraform", isIcon: true },
-  { imgPath: `${BASE}images/logos/company-logo-7.svg`, name: "MDX", isIcon: true },
-  { imgPath: `${BASE}images/logos/company-logo-8.svg`, name: "Prisma", isIcon: true },
+  {
+    imgPath: `${BASE}images/logos/company-logo-5.svg`,
+    name: "ModelContextProtocol",
+  },
+  {
+    imgPath: `${BASE}images/logos/company-logo-6.svg`,
+    name: "Terraform",
+    isIcon: true,
+  },
+  {
+    imgPath: `${BASE}images/logos/company-logo-7.svg`,
+    name: "MDX",
+    isIcon: true,
+  },
+  {
+    imgPath: `${BASE}images/logos/company-logo-8.svg`,
+    name: "Prisma",
+    isIcon: true,
+  },
   { imgPath: `${BASE}images/logos/company-logo-9.svg`, name: "GitHub" },
-  { imgPath: `${BASE}images/logos/company-logo-10.svg`, name: "Kubernetes", isIcon: true },
-  { imgPath: `${BASE}images/logos/company-logo-11.svg`, name: "Python", isIcon: true },
-  { imgPath: `${BASE}images/logos/company-logo-12.svg`, name: "Go", isIcon: true },
+  {
+    imgPath: `${BASE}images/logos/company-logo-10.svg`,
+    name: "Kubernetes",
+    isIcon: true,
+  },
+  {
+    imgPath: `${BASE}images/logos/company-logo-11.svg`,
+    name: "Python",
+    isIcon: true,
+  },
+  {
+    imgPath: `${BASE}images/logos/company-logo-12.svg`,
+    name: "Go",
+    isIcon: true,
+  },
 ];
 
 const abilities = [
@@ -102,7 +133,7 @@ const techStackIcons = [
     position: [0, -0.65, 0],
   },
   {
-    name: "API Design",
+    name: "ML workflows & API design",
     modelPath: `${BASE}models/python-transformed.glb`,
     scale: 0.8,
     rotation: [0, 0, 0],
@@ -189,7 +220,6 @@ const expLogos = [
     imgPath: `${BASE}images/logo3.png`,
   },
 ];
-
 
 const socialImgs = [
   {
