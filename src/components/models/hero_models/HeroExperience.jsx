@@ -19,6 +19,7 @@ const HeroExperience = () => {
         powerPreference: "high-performance",
         antialias: !isMobile,
       }}
+      performance={{ min: 0.5 }}
     >
       {/* deep blue ambient */}
       <ambientLight intensity={0.2} color="#1a1a40" />

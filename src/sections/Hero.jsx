@@ -22,8 +22,8 @@ const Hero = () => {
       </div>
 
       <div className="hero-layout">
-        {/* LEFT: Hero Content */}
-        <header className="flex flex-col justify-center w-full md:px-20 px-5">
+        {/* LEFT: Hero Content — takes 50% on desktop, full width on mobile */}
+        <header className="flex flex-col justify-center xl:w-1/2 w-full md:px-20 px-5 relative z-20">
           <div className="flex flex-col gap-7">
             <div className="hero-text">
               <h1>
@@ -65,8 +65,8 @@ const Hero = () => {
           </div>
         </header>
 
-        {/* RIGHT: 3D Model or Visual */}
-        <figure aria-label="3D animated room scene" role="img">
+        {/* RIGHT: 3D Model — takes 50% on desktop, absolute overlay on mobile */}
+        <figure className="xl:w-1/2 xl:h-full xl:relative absolute inset-0 z-10" aria-label="3D animated room scene" role="img">
           <div className="hero-3d-layout">
             <HeroExperience />
           </div>
