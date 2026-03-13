@@ -19,11 +19,12 @@ const Particles = ({ count = 200 }) => {
     return temp;
   }, [count]);
 
-  useFrame(() => {
+  // Use delta for framerate-independent particle speed
+  useFrame((_, delta) => {
     const positions = mesh.current.geometry.attributes.position.array;
     for (let i = 0; i < count; i++) {
       let y = positions[i * 3 + 1];
-      y -= particles[i].speed;
+      y -= particles[i].speed * delta * 60;
       if (y < -2) y = Math.random() * 10 + 5;
       positions[i * 3 + 1] = y;
     }
