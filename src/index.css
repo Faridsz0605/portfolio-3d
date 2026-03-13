@@ -97,9 +97,10 @@ section {
     @apply bg-black-200 py-2 px-4 rounded-full w-fit text-sm md:text-base text-nowrap;
   }
 
-  /* On desktop: figure takes the right half; on mobile: absolute overlay behind text */
+  /* On desktop: fills the xl:w-1/2 figure column, slight upward bleed for depth.
+     On mobile: absolute overlay starting below the navbar. */
   .hero-3d-layout {
-    @apply xl:w-[70%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 xl:-right-20 right-0 pointer-events-none xl:pointer-events-auto;
+    @apply xl:w-full xl:h-[120%] w-full h-full min-h-[50vh] absolute xl:-top-10 top-24 xl:right-0 right-0 pointer-events-none xl:pointer-events-auto;
   }
 
   .navbar {
