@@ -71,7 +71,7 @@ const AppShowcase = () => {
                 href="https://github.com/faridsz0605/wiener-git"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 text-sm text-white-50 hover:text-white transition-colors"
+                className="mt-4 inline-flex items-center gap-2 text-sm text-white-50 hover:text-white transition-colors py-2 px-3 -mx-3"
               >
                 <img
                   src={`${import.meta.env.BASE_URL}images/github.svg`}
@@ -112,7 +112,7 @@ const AppShowcase = () => {
                 href="https://github.com/faridsz0605/whttp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-2 text-sm text-white-50 hover:text-white transition-colors"
+                className="mt-3 inline-flex items-center gap-2 text-sm text-white-50 hover:text-white transition-colors py-2 px-3 -mx-3"
               >
                 <img
                   src={`${import.meta.env.BASE_URL}images/github.svg`}
@@ -154,7 +154,7 @@ const AppShowcase = () => {
                 href="https://github.com/faridsz0605/wiener-tickets"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-2 text-sm text-white-50 hover:text-white transition-colors"
+                className="mt-3 inline-flex items-center gap-2 text-sm text-white-50 hover:text-white transition-colors py-2 px-3 -mx-3"
               >
                 <img
                   src={`${import.meta.env.BASE_URL}images/github.svg`}

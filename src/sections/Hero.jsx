@@ -23,7 +23,7 @@ const Hero = () => {
 
       <div className="hero-layout">
         {/* LEFT: Hero Content */}
-        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
+        <header className="flex flex-col justify-center w-full md:px-20 px-5">
           <div className="flex flex-col gap-7">
             <div className="hero-text">
               <h1>
@@ -53,8 +53,7 @@ const Hero = () => {
             </div>
 
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hey, I&apos;m Farid — MLOps Engineer from Colombia building data pipelines,{" "}
-              <br />
+              Hey, I&apos;m Farid — MLOps Engineer from Colombia building data pipelines,
               cloud infrastructure and AI systems. Let&apos;s build something together.
             </p>
 
