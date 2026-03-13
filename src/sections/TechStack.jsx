@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 import TitleHeader from "../components/TitleHeader";
-import TechStackScene from "../components/models/tech_logos/TechStackScene";
+import TechIconCardExperience from "../components/models/tech_logos/TechIconCardExperience";
 import { techStackIcons } from "../constants";
 
 const TechStack = () => {
@@ -31,29 +31,21 @@ const TechStack = () => {
           title="My Technical Skills and Stack"
           sub="What I work with and what I bring to the table"
         />
-
-        {/* Single shared Canvas for all 3D tech icons */}
-        <div
-          className="tech-card w-full xl:h-[50vh] md:h-[60vh] h-[70vh] mt-16 rounded-lg overflow-hidden"
-          aria-label="3D tech stack icons: Linux, Python, AWS, Kubernetes, Git"
-          role="img"
-        >
-          <TechStackScene techIcons={techStackIcons} />
-        </div>
-
-        {/* Text labels grid below the 3D scene */}
-        <div className="tech-grid mt-8">
+        <div className="tech-grid">
           {techStackIcons.map((techStackIcon) => (
             <div
               key={techStackIcon.name}
               className="card-border tech-card overflow-hidden group xl:rounded-full rounded-lg"
+              aria-label={`3D model: ${techStackIcon.name}`}
+              role="img"
             >
               <div className="tech-card-animated-bg" />
-              <div className="flex flex-col items-center justify-center py-5 relative z-10">
+              <div className="tech-card-content">
+                <div className="tech-icon-wrapper">
+                  <TechIconCardExperience model={techStackIcon} />
+                </div>
                 <div className="padding-x w-full">
-                  <p className="text-lg 2xl:text-2xl font-semibold text-white-50 text-center">
-                    {techStackIcon.name}
-                  </p>
+                  <p>{techStackIcon.name}</p>
                 </div>
               </div>
             </div>
