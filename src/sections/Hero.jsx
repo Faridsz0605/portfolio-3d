@@ -66,7 +66,7 @@ const Hero = () => {
         </header>
 
         {/* RIGHT: 3D Model or Visual */}
-        <figure>
+        <figure aria-label="3D animated room scene" role="img">
           <div className="hero-3d-layout">
             <HeroExperience />
           </div>
