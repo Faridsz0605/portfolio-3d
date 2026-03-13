@@ -7,25 +7,29 @@
 const Button = ({ text, className, id }) => {
   return (
     <a
+      href={id ? `#${id}` : undefined}
       onClick={(e) => {
-        e.preventDefault(); // Stop the link from jumping instantly
+        e.preventDefault();
 
-        const target = document.getElementById("counter"); // Find the section with ID "counter"
+        const target = document.getElementById("counter");
 
-        // Only scroll if we found the section and an ID is passed in
-        // taht prevents the contact button from scrolling to the top
         if (target && id) {
-          const offset = window.innerHeight * 0.15; // Leave a bit of space at the top
-
-          // Calculate how far down the page we need to scroll
+          const offset = window.innerHeight * 0.15;
           const top =
-            target.getBoundingClientRect().top + window.pageYOffset - offset;
+            target.getBoundingClientRect().top + window.scrollY - offset;
 
-          // Scroll smoothly to that position
           window.scrollTo({ top, behavior: "smooth" });
         }
       }}
-      className={`${className ?? ""} cta-wrapper`} // Add base + extra class names
+      className={`${className ?? ""} cta-wrapper`}
+      role="link"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          e.currentTarget.click();
+        }
+      }}
     >
       <div className="cta-button group">
         <div className="bg-circle" />

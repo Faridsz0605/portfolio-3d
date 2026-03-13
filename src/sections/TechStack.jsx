@@ -33,7 +33,11 @@ const TechStack = () => {
         />
 
         {/* Single shared Canvas for all 3D tech icons */}
-        <div className="tech-card w-full xl:h-[50vh] md:h-[60vh] h-[70vh] mt-16 rounded-lg overflow-hidden">
+        <div
+          className="tech-card w-full xl:h-[50vh] md:h-[60vh] h-[70vh] mt-16 rounded-lg overflow-hidden"
+          aria-label="3D tech stack icons: Linux, Python, AWS, Kubernetes, Git"
+          role="img"
+        >
           <TechStackScene techIcons={techStackIcons} />
         </div>
 

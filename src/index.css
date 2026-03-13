@@ -506,3 +506,22 @@ section {
 .card:hover::before {
   opacity: 1;
 }
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .wrapper {
+    animation: none;
+  }
+
+  .marquee-box {
+    animation: none;
+  }
+
+  .slide {
+    transition: none;
+  }
+
+  * {
+    scroll-behavior: auto !important;
+  }
+}
