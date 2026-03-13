@@ -80,7 +80,7 @@ section {
   }
 
   .hero-layout {
-    @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center;
+    @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:flex-row flex-col xl:items-center items-start justify-center;
   }
 
   .hero-text {
@@ -97,8 +97,9 @@ section {
     @apply bg-black-200 py-2 px-4 rounded-full w-fit text-sm md:text-base text-nowrap;
   }
 
+  /* On desktop: figure takes the right half; on mobile: absolute overlay behind text */
   .hero-3d-layout {
-    @apply xl:w-[70%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 xl:-right-20 right-0;
+    @apply xl:w-[70%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 xl:-right-20 right-0 pointer-events-none xl:pointer-events-auto;
   }
 
   .navbar {
