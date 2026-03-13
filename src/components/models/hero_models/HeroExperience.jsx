@@ -18,6 +18,7 @@ const HeroExperience = () => {
       gl={{
         powerPreference: "high-performance",
         antialias: !isMobile,
+        alpha: true,
       }}
       performance={{ min: 0.5 }}
     >
