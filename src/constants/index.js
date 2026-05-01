@@ -13,10 +13,10 @@ const navLinks = [
     name: "Skills",
     link: "#skills",
   },
-  // {
-  //   name: "Testimonials",
-  //   link: "#testimonials",
-  // },
+  {
+    name: "Contact",
+    link: "#contact",
+  },
 ];
 
 const words = [
@@ -85,17 +85,17 @@ const logoIconsList = [
 
 const abilities = [
   {
-    imgPath: `${BASE}images/seo.png`,
+    imgPath: `${BASE}images/card-logo-1.png`,
     title: "Quality Focus",
     desc: "Delivering high-impact results through a relentless drive for mastery and an uncompromising eye for detail.",
   },
   {
-    imgPath: `${BASE}images/chat.png`,
+    imgPath: `${BASE}images/card-logo-2.png`,
     title: "Assertive Communication",
     desc: "Keeping you updated at every step to ensure transparency and clarity.",
   },
   {
-    imgPath: `${BASE}images/time.png`,
+    imgPath: `${BASE}images/card-logo-3.png`,
     title: "Power Documentation",
     desc: "Markdown-based documentation integrated with Notion to centralize knowledge, track team progress in real time, and keep every stakeholder aligned throughout the project lifecycle.",
   },

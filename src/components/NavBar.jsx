@@ -27,7 +27,10 @@ const NavBar = () => {
       <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
         <div className="inner">
           <a href="#hero" className="logo">
-            Farid Sayago
+            <span className="logo-mark" aria-hidden="true">
+              F
+            </span>
+            <span>Farid Sayago</span>
           </a>
 
           <nav className="desktop">
@@ -43,25 +46,23 @@ const NavBar = () => {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-4">
-            <a href="#contact" className="contact-btn group hidden lg:flex">
-              <div className="inner">
-                <span>Contact me</span>
-              </div>
+          <div className="nav-meta">
+            <a href="#contact" className="available">
+              <span className="blue-dot" /> Available for work
             </a>
+            <span className="h-6 w-px bg-line" />
+            <span>v1.0.0</span>
+            <span aria-hidden="true">☼</span>
+          </div>
 
+          <div className="flex items-center justify-end lg:hidden">
             <button
               className="hamburger lg:hidden"
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
             >
-              <img
-                src={`${import.meta.env.BASE_URL}images/${menuOpen ? "x" : "menu"}.svg`}
-                alt={menuOpen ? "Close menu" : "Open menu"}
-                width="24"
-                height="24"
-              />
+              <span aria-hidden="true">{menuOpen ? "×" : "☰"}</span>
             </button>
           </div>
         </div>
@@ -82,7 +83,7 @@ const NavBar = () => {
             ))}
           </ul>
           <a href="#contact" className="mobile-contact-btn" onClick={closeMenu}>
-            Contact me
+            Available for work
           </a>
         </nav>
       </div>

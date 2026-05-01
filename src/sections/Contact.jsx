@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import TitleHeader from "../components/TitleHeader";
-import ContactExperience from "../components/models/contact/ContactExperience";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -13,112 +12,119 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true); // Show loading state
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
 
     try {
       await emailjs.sendForm(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
       );
 
-      // Reset form and stop loading
       setForm({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
+      console.error("EmailJS Error:", error);
     } finally {
-      setLoading(false); // Always stop loading, even on error
+      setLoading(false);
     }
   };
 
   return (
-    <section id="contact" className="flex-center section-padding">
-      <div className="w-full h-full md:px-10 px-5">
-        <TitleHeader
-          title="Get in Touch – Let's Connect"
-          sub="Have a question or want to work together? Let's talk."
-        />
-        <div className="grid-12-cols mt-16">
-          <div className="xl:col-span-5">
-            <div className="flex-center card-border rounded-xl p-10">
-              <form
-                ref={formRef}
-                onSubmit={handleSubmit}
-                className="w-full flex flex-col gap-7"
-              >
-                <div>
-                  <label htmlFor="name">Your name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="What's your good name?"
-                    autoComplete="name"
-                    required
-                  />
-                </div>
+    <section id="contact" className="section-padding">
+      <TitleHeader title="Let’s build the useful layer." sub="06 Contact" />
 
-                <div>
-                  <label htmlFor="email">Your Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="What's your email address?"
-                    inputMode="email"
-                    autoComplete="email"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message">Your Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    placeholder="How can I help you?"
-                    rows="5"
-                    required
-                  />
-                </div>
-
-                <button type="submit">
-                  <div className="cta-button group">
-                    <div className="bg-circle" />
-                    <p className="text">
-                      {loading ? "Sending..." : "Send Message"}
-                    </p>
-                    <div className="arrow-wrapper">
-                      <img src={`${import.meta.env.BASE_URL}images/arrow-down.svg`} alt="arrow" />
-                    </div>
-                  </div>
-                </button>
-              </form>
+      <div className="contact-grid">
+        <aside className="terminal-window">
+          <div className="terminal-bar">
+            <div className="terminal-dots" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </div>
+            <span>Contact protocol</span>
+            <span className="text-electric">online</span>
+          </div>
+          <div className="terminal-body">
+            <p>
+              <span className="terminal-prompt">›</span> Available for AI,
+              data, and cloud engineering collaborations.
+            </p>
+            <p>
+              <span className="terminal-prompt">›</span> Best fit: projects
+              where reliability, documentation, and measurable outcomes matter.
+            </p>
+            <div className="rounded-lg border border-line bg-night-100/60 p-5">
+              <p className="mono-label mb-3 text-electric">Response pattern</p>
+              <ul className="space-y-2 text-muted-strong">
+                <li>01. Scope and constraints</li>
+                <li>02. Technical feasibility</li>
+                <li>03. Delivery path</li>
+              </ul>
             </div>
           </div>
-          <div className="xl:col-span-7 min-h-96">
-            <div
-              className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden"
-              aria-label="3D computer model"
-              role="img"
-            >
-              <ContactExperience />
+        </aside>
+
+        <div className="rounded-xl p-6 glass-panel md:p-8">
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="flex w-full flex-col gap-6"
+          >
+            <div>
+              <label htmlFor="name">Your name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Ada Lovelace"
+                autoComplete="name"
+                required
+              />
             </div>
-          </div>
+
+            <div>
+              <label htmlFor="email">Your email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="ada@example.com"
+                inputMode="email"
+                autoComplete="email"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message">Project context</label>
+              <textarea
+                id="message"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Tell me what you are building, what is broken, or what needs to scale."
+                rows="6"
+                required
+              />
+            </div>
+
+            <button type="submit" className="button-primary">
+              {loading ? "Sending..." : "Send Message"}
+              <span aria-hidden="true">↗</span>
+            </button>
+          </form>
         </div>
       </div>
     </section>
