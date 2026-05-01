@@ -11,21 +11,41 @@ const Experience = lazy(() => import("./sections/Experience"));
 const TechStack = lazy(() => import("./sections/TechStack"));
 const Contact = lazy(() => import("./sections/Contact"));
 const Footer = lazy(() => import("./sections/Footer"));
+const BlogIndex = lazy(() => import("./pages/BlogIndex"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
 
-const App = () => (
-  <div className="site-shell">
-    <Navbar />
-    <Hero />
-    <Suspense fallback={null}>
-      <ShowcaseSection />
-      <LogoShowcase />
-      <FeatureCards />
-      <Experience />
-      <TechStack />
-      <Contact />
-      <Footer />
-    </Suspense>
-  </div>
-);
+const App = () => {
+  const path = window.location.pathname;
+  const isBlogRoute = path === "/blog" || path.startsWith("/blog/");
+  const blogSlug = path.replace(/^\/blog\/?/, "");
+
+  if (isBlogRoute) {
+    return (
+      <div className="site-shell">
+        <Navbar />
+        <Suspense fallback={null}>
+          {blogSlug ? <BlogPost slug={blogSlug} /> : <BlogIndex />}
+          <Footer />
+        </Suspense>
+      </div>
+    );
+  }
+
+  return (
+    <div className="site-shell">
+      <Navbar />
+      <Hero />
+      <Suspense fallback={null}>
+        <ShowcaseSection />
+        <LogoShowcase />
+        <FeatureCards />
+        <Experience />
+        <TechStack />
+        <Contact />
+        <Footer />
+      </Suspense>
+    </div>
+  );
+};
 
 export default App;

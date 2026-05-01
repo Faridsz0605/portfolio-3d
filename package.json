@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync-blog": "node scripts/sync-obsidian-blog.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -21,7 +22,9 @@
     "postprocessing": "^6.38.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
     "react-responsive": "^10.0.1",
+    "remark-gfm": "^4.0.1",
     "tailwindcss": "^4.0.14",
     "three": "^0.174.0"
   },

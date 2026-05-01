@@ -5,6 +5,7 @@ import { navLinks } from "../constants";
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const isBlogRoute = window.location.pathname.startsWith("/blog");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -26,7 +27,7 @@ const NavBar = () => {
     <>
       <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
         <div className="inner">
-          <a href="#hero" className="logo">
+          <a href="/#hero" className="logo">
             <span className="logo-mark" aria-hidden="true">
               F
             </span>
@@ -37,17 +38,23 @@ const NavBar = () => {
             <ul>
               {navLinks.map(({ link, name }) => (
                 <li key={name} className="group">
-                  <a href={link}>
+                  <a href={isBlogRoute ? `/${link}` : link}>
                     <span>{name}</span>
                     <span className="underline" />
                   </a>
                 </li>
               ))}
+              <li className="group">
+                <a href="/blog" aria-current={isBlogRoute ? "page" : undefined}>
+                  <span>Blog</span>
+                  <span className="underline" />
+                </a>
+              </li>
             </ul>
           </nav>
 
           <div className="nav-meta">
-            <a href="#contact" className="available">
+            <a href={isBlogRoute ? "/#contact" : "#contact"} className="available">
               <span className="blue-dot" /> Available for work
             </a>
             <span className="h-6 w-px bg-line" />
@@ -76,13 +83,22 @@ const NavBar = () => {
           <ul>
             {navLinks.map(({ link, name }) => (
               <li key={name}>
-                <a href={link} onClick={closeMenu}>
+                <a href={isBlogRoute ? `/${link}` : link} onClick={closeMenu}>
                   {name}
                 </a>
               </li>
             ))}
+            <li>
+              <a href="/blog" onClick={closeMenu}>
+                Blog
+              </a>
+            </li>
           </ul>
-          <a href="#contact" className="mobile-contact-btn" onClick={closeMenu}>
+          <a
+            href={isBlogRoute ? "/#contact" : "#contact"}
+            className="mobile-contact-btn"
+            onClick={closeMenu}
+          >
             Available for work
           </a>
         </nav>
