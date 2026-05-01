@@ -1,33 +1,41 @@
 import { logoIconsList } from "../constants";
 
-const LogoIcon = ({ icon }) => {
+const LogoIcon = ({ icon, index }) => {
+  const sizeClass = icon.isDjango ? "h-[60px]" : icon.isIcon ? "h-[53px]" : "h-11";
+
   return (
     <div className="flex-none flex-center marquee-item">
-      <img src={icon.imgPath} alt={icon.name} className={`w-auto object-contain ${icon.isDjango ? "h-[50px]" : icon.isIcon ? "h-[53px]" : "h-11"}`} />
+      <img
+        src={icon.imgPath}
+        alt={icon.name}
+        className={`w-auto object-contain ${sizeClass}`}
+        loading={index > 3 ? "lazy" : "eager"}
+      />
     </div>
   );
 };
 
 const LogoShowcase = () => (
-  <div className="md:my-20 my-10 relative">
-    <p className="text-white-50 text-center text-sm uppercase tracking-widest mb-4 font-light">
-      Tools & Technologies I Use
-    </p>
-    <div className="gradient-edge" />
-    <div className="gradient-edge" />
+  <section className="px-5 py-12 md:px-12 xl:px-20">
+    <div className="logo-rail">
+      <p className="mono-label mb-6 text-center">Tools & technologies I use</p>
+      <div className="marquee">
+        <div className="marquee-box">
+          {logoIconsList.map((icon, index) => (
+            <LogoIcon key={`${icon.name}-${index}`} icon={icon} index={index} />
+          ))}
 
-    <div className="marquee h-52">
-      <div className="marquee-box md:gap-12 gap-5">
-        {logoIconsList.map((icon, index) => (
-          <LogoIcon key={index} icon={icon} />
-        ))}
-
-        {logoIconsList.map((icon, index) => (
-          <LogoIcon key={index} icon={icon} />
-        ))}
+          {logoIconsList.map((icon, index) => (
+            <LogoIcon
+              key={`${icon.name}-repeat-${index}`}
+              icon={icon}
+              index={index + logoIconsList.length}
+            />
+          ))}
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default LogoShowcase;

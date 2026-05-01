@@ -11,7 +11,7 @@ const Button = ({ text, className, id }) => {
       onClick={(e) => {
         e.preventDefault();
 
-        const target = document.getElementById("counter");
+        const target = id ? document.getElementById(id) : null;
 
         if (target && id) {
           const offset = window.innerHeight * 0.15;
@@ -21,7 +21,7 @@ const Button = ({ text, className, id }) => {
           window.scrollTo({ top, behavior: "smooth" });
         }
       }}
-      className={`${className ?? ""} cta-wrapper`}
+      className={className ?? ""}
       role="link"
       tabIndex={0}
       onKeyDown={(e) => {
@@ -31,12 +31,9 @@ const Button = ({ text, className, id }) => {
         }
       }}
     >
-      <div className="cta-button group">
-        <div className="bg-circle" />
+      <div className="button-primary group">
         <p className="text">{text}</p>
-        <div className="arrow-wrapper">
-          <img src={`${import.meta.env.BASE_URL}images/arrow-down.svg`} alt="arrow" />
-        </div>
+        <span aria-hidden="true">↗</span>
       </div>
     </a>
   );

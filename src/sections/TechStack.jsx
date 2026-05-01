@@ -1,58 +1,63 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import TitleHeader from "../components/TitleHeader";
-import TechIconCardExperience from "../components/models/tech_logos/TechIconCardExperience";
 import { techStackIcons } from "../constants";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const skillNotes = [
+  "Operational tooling and daily Linux-first workflows.",
+  "ML workflows, API boundaries, and production-minded Python systems.",
+  "Cloud infrastructure patterns for resilient data and AI services.",
+  "Containerized environments and orchestration-ready deployment paths.",
+  "Version control discipline, clean history, and reproducible delivery.",
+];
 
 const TechStack = () => {
   useGSAP(() => {
     gsap.fromTo(
-      ".tech-card",
-      { y: 50, opacity: 0 },
+      ".skill-card",
+      { y: 40, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        duration: 1,
-        ease: "power2.inOut",
-        stagger: 0.2,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.1,
         scrollTrigger: {
           trigger: "#skills",
-          start: "top center",
+          start: "top 70%",
         },
-      }
+      },
     );
   });
 
   return (
-    <div id="skills" className="flex-center section-padding">
-      <div className="w-full h-full md:px-10 px-5">
-        <TitleHeader
-          title="My Technical Skills and Stack"
-          sub="What I work with and what I bring to the table"
-        />
-        <div className="tech-grid">
-          {techStackIcons.map((techStackIcon) => (
-            <div
-              key={techStackIcon.name}
-              className="card-border tech-card overflow-hidden group xl:rounded-full rounded-lg"
-              aria-label={`3D model: ${techStackIcon.name}`}
-              role="img"
-            >
-              <div className="tech-card-animated-bg" />
-              <div className="tech-card-content">
-                <div className="tech-icon-wrapper">
-                  <TechIconCardExperience model={techStackIcon} />
-                </div>
-                <div className="padding-x w-full">
-                  <p>{techStackIcon.name}</p>
-                </div>
-              </div>
+    <section id="skills" className="section-padding">
+      <TitleHeader
+        title="Technical systems, not buzzwords."
+        sub="04 Skills"
+      />
+
+      <div className="tech-grid">
+        {techStackIcons.map((techStackIcon, index) => (
+          <article key={techStackIcon.name} className="skill-card">
+            <div className="mb-8 flex items-center justify-between font-mono text-xs uppercase tracking-[0.18em] text-muted">
+              <span className="text-electric">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span>Core</span>
             </div>
-          ))}
-        </div>
+            <h3 className="text-2xl font-semibold tracking-[-0.04em] text-ink">
+              {techStackIcon.name}
+            </h3>
+            <p className="mt-5 leading-7 text-muted-strong">{skillNotes[index]}</p>
+          </article>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

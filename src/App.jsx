@@ -1,23 +1,19 @@
 import { lazy, Suspense } from "react";
 import Hero from "./sections/Hero";
-import TechStack from "./sections/TechStack";
-import Contact from "./sections/Contact";
 import Navbar from "./components/NavBar";
 
-// Lazy load sections that have no WebGL Canvas — safe to defer
+// Hero is the only eager WebGL Canvas. Everything else stays lazy to keep the
+// context budget safe and the first screen fast.
 const ShowcaseSection = lazy(() => import("./sections/ShowcaseSection"));
 const LogoShowcase = lazy(() => import("./sections/LogoShowcase"));
 const FeatureCards = lazy(() => import("./sections/FeatureCards"));
 const Experience = lazy(() => import("./sections/Experience"));
-// const Testimonials = lazy(() => import("./sections/Testimonials"));
+const TechStack = lazy(() => import("./sections/TechStack"));
+const Contact = lazy(() => import("./sections/Contact"));
 const Footer = lazy(() => import("./sections/Footer"));
 
-// Hero, TechStack and Contact stay eager — they each own WebGL Canvas elements.
-// Lazy-mounting multiple Canvas components simultaneously saturates the browser's
-// WebGL context pool and causes THREE.WebGLRenderer: Context Lost.
-
 const App = () => (
-  <>
+  <div className="site-shell">
     <Navbar />
     <Hero />
     <Suspense fallback={null}>
@@ -25,14 +21,11 @@ const App = () => (
       <LogoShowcase />
       <FeatureCards />
       <Experience />
-    </Suspense>
-    <TechStack />
-    <Suspense fallback={null}>
-      {/* <Testimonials /> */}
+      <TechStack />
       <Contact />
       <Footer />
     </Suspense>
-  </>
+  </div>
 );
 
 export default App;

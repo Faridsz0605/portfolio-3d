@@ -3,74 +3,141 @@ import gsap from "gsap";
 
 import AnimatedCounter from "../components/AnimatedCounter";
 import Button from "../components/Button";
-import { words } from "../constants";
 import HeroExperience from "../components/models/hero_models/HeroExperience";
 
 const Hero = () => {
   useGSAP(() => {
     gsap.fromTo(
-      ".hero-text .line",
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" },
+      ".hero-reveal",
+      { y: 34, opacity: 0 },
+      { y: 0, opacity: 1, stagger: 0.12, duration: 0.9, ease: "power3.out" },
     );
   });
 
   return (
     <section id="hero" className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 z-10">
-        <img src={`${import.meta.env.BASE_URL}images/bg.png`} alt="" />
-      </div>
-
       <div className="hero-layout">
-        {/* LEFT: Hero Content — takes 50% on desktop, full width on mobile */}
-        <header className="flex flex-col justify-center xl:w-1/2 w-full md:px-20 px-5 relative z-20">
-          <div className="flex flex-col gap-7">
-            <div className="hero-text">
-              <h1>
-                <span className="line block">
-                  Shaping
-                  <span className="slide">
-                    <span className="wrapper">
-                      {words.map((word, index) => (
-                        <span
-                          key={index}
-                          className="flex items-center md:gap-3 gap-1 pb-2"
-                        >
-                          <img
-                            src={word.imgPath}
-                            alt={word.text}
-                            className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
-                          />
-                          <span>{word.text}</span>
-                        </span>
-                      ))}
-                    </span>
-                  </span>
-                </span>
-                <span className="line block">into Real Solutions</span>
-                <span className="line block">that Deliver Results</span>
-              </h1>
-            </div>
+        <header className="hero-copy">
+          <div className="hero-reveal mono-label flex items-center gap-4">
+            <span className="blue-dot" /> Hello, I&apos;m Farid
+          </div>
 
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hey, I&apos;m Farid — MLOps Engineer from Colombia building data pipelines,
-              cloud infrastructure and AI systems. Let&apos;s build something together.
-            </p>
+          <h1 className="hero-reveal hero-title display-title">
+            Building <em>human-made</em> workflows for an AI-powered world.
+          </h1>
 
-            <Button
-              text="See my work"
-              className="md:w-80 md:h-16 w-60 h-12"
-              id="counter"
-            />
+          <p className="hero-reveal hero-description">
+            I&apos;m an MLOps and data engineer from Colombia building reliable
+            pipelines, cloud infrastructure, and AI systems that stay useful
+            after the demo ends.
+          </p>
+
+          <div className="hero-reveal hero-actions">
+            <Button text="View Work" id="work" />
+            <a href="#contact" className="button-secondary">
+              Let&apos;s Talk <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </header>
 
-        {/* RIGHT: 3D Model — takes 50% on desktop, absolute overlay on mobile */}
-        <figure className="xl:w-1/2 xl:h-full xl:relative absolute inset-0 z-10" aria-label="3D animated room scene" role="img">
-          <div className="hero-3d-layout">
+        <div className="hero-visual" aria-label="Featured project overview">
+          <div className="hero-3d-layout" aria-hidden="true">
             <HeroExperience />
           </div>
-        </figure>
+
+          <article className="hero-reveal terminal-window mt-8 lg:mt-0">
+            <div className="terminal-bar">
+              <div className="terminal-dots" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
+              <span>Featured Project: Wiener Tickets</span>
+              <a
+                href="https://github.com/faridsz0605/wiener-tickets"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden text-electric md:inline"
+              >
+                ~/projects/wiener-tickets
+              </a>
+            </div>
+
+            <div className="terminal-body">
+              <div>
+                <p>
+                  <span className="terminal-prompt">›</span> Wiener Tickets is
+                  an end-to-end MLOps pipeline for IT support ticket
+                  classification.
+                </p>
+                <p>
+                  <span className="terminal-prompt">›</span> Focused on
+                  reproducibility, model lifecycle design, and operational
+                  clarity.
+                </p>
+              </div>
+
+              <div>
+                <p>
+                  <b>› MY ROLE</b>
+                </p>
+                <ul className="mt-2 list-disc space-y-1 pl-5">
+                  <li>Pipeline architecture</li>
+                  <li>Model training workflow</li>
+                  <li>Docker-ready deployment path</li>
+                </ul>
+              </div>
+
+              <div>
+                <p>
+                  <b>› PROCESS</b>
+                </p>
+                <ol className="mt-2 grid gap-1">
+                  <li>
+                    <strong>01</strong> Data ingestion and cleaning
+                  </li>
+                  <li>
+                    <strong>02</strong> Feature engineering
+                  </li>
+                  <li>
+                    <strong>03</strong> Supervised classification
+                  </li>
+                  <li>
+                    <strong>04</strong> Experiment tracking
+                  </li>
+                  <li>
+                    <strong>05</strong> Retraining strategy
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <footer className="terminal-footer">
+              <span>
+                <span className="terminal-prompt">›</span> STATUS:{" "}
+                <b>In progress</b>
+              </span>
+              <a
+                href="https://github.com/faridsz0605/wiener-tickets"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="terminal-link"
+              >
+                View Project →
+              </a>
+            </footer>
+          </article>
+
+          <div className="hero-reveal copy-strip">
+            <p className="font-mono text-sm text-muted">
+              <span className="text-electric">› farid.sayago</span> // available
+              for AI, data, and cloud systems
+            </p>
+            <a href="#contact" className="terminal-link">
+              Contact
+            </a>
+          </div>
+        </div>
       </div>
 
       <AnimatedCounter />
