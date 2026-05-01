@@ -447,6 +447,187 @@ section {
   .socials .icon {
     @apply flex size-11 items-center justify-center rounded-full border border-line bg-night-100 transition-colors hover:border-electric;
   }
+
+  .blog-page {
+    @apply min-h-screen pt-20;
+  }
+
+  .blog-container {
+    @apply mx-auto max-w-[1120px];
+  }
+
+  .blog-hero {
+    @apply pb-12;
+  }
+
+  .blog-hero-grid {
+    @apply grid grid-cols-1 gap-8 lg:grid-cols-[1fr_22rem] lg:items-end;
+  }
+
+  .blog-title {
+    @apply text-[5rem] text-ink md:text-[8rem] xl:text-[10rem];
+  }
+
+  .blog-lede {
+    @apply mt-8 max-w-3xl border-l border-line pl-6 text-base leading-8 text-muted-strong md:text-lg;
+  }
+
+  .blog-note-card,
+  .blog-card,
+  .blog-article-shell {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    box-shadow: 0 26px 80px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(22px);
+  }
+
+  .blog-note-card {
+    @apply rounded-xl p-6 text-sm leading-7 text-muted-strong;
+  }
+
+  .blog-note-card p {
+    @apply mt-4;
+  }
+
+  .blog-list {
+    @apply grid grid-cols-1 gap-5;
+  }
+
+  .blog-card {
+    @apply rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-line-strong md:p-8;
+  }
+
+  .blog-card-meta {
+    @apply mb-5 flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-muted;
+  }
+
+  .blog-card-meta span:not(:last-child)::after {
+    content: "//";
+    @apply ml-3 text-line-strong;
+  }
+
+  .blog-card-title {
+    @apply block max-w-4xl text-3xl font-semibold tracking-[-0.05em] text-ink transition-colors hover:text-electric md:text-5xl;
+  }
+
+  .blog-card p {
+    @apply mt-5 max-w-3xl text-base leading-8 text-muted-strong;
+  }
+
+  .blog-tags {
+    @apply mt-6 flex flex-wrap gap-2;
+  }
+
+  .blog-tags span {
+    @apply rounded-full border border-line bg-night-100/70 px-3 py-1 font-mono text-xs uppercase tracking-[0.14em] text-muted-strong;
+  }
+
+  .blog-article {
+    @apply pt-28;
+  }
+
+  .blog-article-shell {
+    @apply rounded-xl p-6 md:p-10 lg:p-12;
+  }
+
+  .blog-article-header {
+    @apply mt-10 border-b border-line pb-10;
+  }
+
+  .blog-article-title {
+    @apply max-w-5xl text-[3.8rem] text-ink md:text-[6.4rem] xl:text-[7.4rem];
+  }
+
+  .blog-article-header p {
+    @apply mt-8 max-w-3xl text-base leading-8 text-muted-strong md:text-lg;
+  }
+
+  .blog-prose {
+    @apply max-w-none pt-10 text-lg leading-9 text-muted-strong;
+  }
+
+  .blog-prose h1,
+  .blog-prose h2,
+  .blog-prose h3 {
+    @apply mt-12 text-ink;
+    font-family: var(--display);
+    letter-spacing: -0.045em;
+  }
+
+  .blog-prose h1 {
+    @apply text-5xl md:text-6xl;
+  }
+
+  .blog-prose h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  .blog-prose h3 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  .blog-prose p,
+  .blog-prose ul,
+  .blog-prose ol,
+  .blog-prose blockquote,
+  .blog-prose pre,
+  .blog-prose table {
+    @apply mt-6;
+  }
+
+  .blog-prose a {
+    @apply text-electric underline decoration-electric/40 underline-offset-4 transition-colors hover:text-ink;
+  }
+
+  .blog-prose ul,
+  .blog-prose ol {
+    @apply pl-6;
+  }
+
+  .blog-prose ul {
+    @apply list-disc;
+  }
+
+  .blog-prose ol {
+    @apply list-decimal;
+  }
+
+  .blog-prose li {
+    @apply mt-3 pl-2;
+  }
+
+  .blog-prose strong {
+    @apply text-ink;
+  }
+
+  .blog-prose code {
+    @apply rounded-md border border-line bg-night-100 px-2 py-1 font-mono text-sm text-ink;
+  }
+
+  .blog-prose pre {
+    @apply overflow-x-auto rounded-xl border border-line bg-night-100 p-5;
+  }
+
+  .blog-prose pre code {
+    @apply border-0 bg-transparent p-0;
+  }
+
+  .blog-prose blockquote {
+    @apply border-l border-electric pl-6 text-ink;
+  }
+
+  .blog-prose table {
+    @apply w-full overflow-hidden rounded-xl border border-line text-left text-base;
+  }
+
+  .blog-prose th,
+  .blog-prose td {
+    @apply border-b border-line px-4 py-3;
+  }
+
+  .blog-empty-state {
+    @apply flex min-h-[56vh] flex-col items-start justify-center;
+  }
 }
 
 @keyframes marquee {
